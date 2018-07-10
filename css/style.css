@@ -1,4 +1,10 @@
 .img-post {
     padding-top: 5px;
+    padding-bottom: 5px;
 }
 
+.img-post img{
+    margin-bottom:10px;
+    margin-top:10px;
+    width: 100%;
+}
