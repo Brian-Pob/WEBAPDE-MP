@@ -16,8 +16,28 @@
 
 /*  PROFILE STYLING   */
 
+.container.overview {
+    text-align: center;
+}
+
+.profile.info{
+    padding: inherit;
+    text-align: center;
+    display: inline;
+}
+
+.profile.username{
+   text-align: center;
+    /*  Will add styling later   */
+
+}
+
+.profile.desciption{
+    /*  Will add styling later   */
+}
+
 .userpic{
-    width: 150px;
+    width: 140px;
     height: auto;
     overflow: hidden;
 }
