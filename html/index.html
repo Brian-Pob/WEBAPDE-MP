@@ -49,8 +49,81 @@
                     <a class="nav-link" href="#">Fresh</a>
                 </li>
             </ul>
-            <a class="btn btn-secondary" id="log-in" href="#">Login</a>
-            <a class="btn btn-primary" id="sign-up"href="#">Sign Up</a>
+            <button class="btn btn-secondary" id="log-in" data-toggle="modal" data-target="#loginModal">Login</button>
+            <!-- The Modal -->
+            <div class="modal" id="loginModal">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Log In</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form class="form-signin">
+
+                                <h1 class="h3 mb-3 font-weight-normal">Log In to your &copy;MemeSupreme experience maximum
+                                    <i>dankness</i>
+                                </h1>
+                                <label for="inputEmail" class="sr-only">Email address/ username</label>
+                                <input type="email" id="inputEmail" class="form-control" placeholder="Email address/ username" required autofocus>
+                                <label for="inputPassword" class="sr-only">Password</label>
+                                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                <div class="checkbox mb-3">
+                                    <label>
+                                        <input type="checkbox" value="remember-me"> Remember me
+                                    </label>
+                                </div>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+                                <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+                            </form>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" id="sign-up" data-toggle="modal" data-target="#signupModal">Sign Up</button>
+            <!-- The Modal -->
+            <div class="modal" id="signupModal">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Sign Up</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form class="form-signin">
+
+                                <h1 class="h3 mb-3 font-weight-normal">Sign Up for a &copy;MemeSupreme account and experience a new dimension of
+                                    <i>litness</i>
+                                </h1>
+                                <label for="inputEmail" class="sr-only">Email address</label>
+                                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                                <label for="inputUsername" class="sr-only">Username</label>
+                                <input type="password" id="inputUsername" class="form-control" placeholder="Username" required>
+                                <label for="inputPassword" class="sr-only">Password</label>
+                                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                <div class="checkbox mb-3">
+                                    <label>
+                                        <input type="checkbox" value="remember-me"> Remember me
+                                    </label>
+                                </div>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+                                <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-light btn-lg my-2 my-sm-0 fa fa-search " type="submit"></button>
@@ -59,7 +132,8 @@
     </nav>
 
     <!-- Posts -->
-    <div class="container img-post"> <!-- Start of post -->
+    <div class="container img-post">
+        <!-- Start of post -->
         <div class="row">
             <div class="col-lg-5 offset-sm-2">
                 <div class="card">
@@ -74,7 +148,7 @@
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
                             <a href="#">
-                                    <img class="rounded picture" src="../imgs/wf.jpg">
+                                <img class="rounded picture" src="../imgs/wf.jpg">
                             </a>
                         </div>
                     </div>
@@ -88,8 +162,10 @@
                 </div>
             </div>
         </div>
-    </div>                           <!-- End of post-->
-    <div class="container img-post"> <!-- Start of post -->
+    </div>
+    <!-- End of post-->
+    <div class="container img-post">
+        <!-- Start of post -->
         <div class="row">
             <div class="col-lg-5 offset-sm-2">
                 <div class="card">
@@ -104,7 +180,7 @@
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
                             <a href="#">
-                                    <img class="rounded picture" src="https://img-9gag-fun.9cache.com/photo/aLjV20V_700bwp.webp">
+                                <img class="rounded picture" src="https://img-9gag-fun.9cache.com/photo/aLjV20V_700bwp.webp">
                             </a>
                         </div>
                     </div>
@@ -118,8 +194,10 @@
                 </div>
             </div>
         </div>
-    </div>                           <!-- End of post-->
-    <div class="container img-post"> <!-- Start of post -->
+    </div>
+    <!-- End of post-->
+    <div class="container img-post">
+        <!-- Start of post -->
         <div class="row">
             <div class="col-lg-5 offset-sm-2">
                 <div class="card">
@@ -134,7 +212,7 @@
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
                             <a href="#">
-                                    <img class="rounded picture" src="https://i.redd.it/po8t2vetie911.jpg">
+                                <img class="rounded picture" src="https://i.redd.it/po8t2vetie911.jpg">
                             </a>
                         </div>
                     </div>
@@ -148,8 +226,10 @@
                 </div>
             </div>
         </div>
-    </div>                           <!-- End of post-->
-    <div class="container img-post"> <!-- Start of post -->
+    </div>
+    <!-- End of post-->
+    <div class="container img-post">
+        <!-- Start of post -->
         <div class="row">
             <div class="col-lg-5 offset-sm-2">
                 <div class="card">
@@ -164,7 +244,7 @@
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
                             <a href="#">
-                                    <img class="rounded picture" src="https://i.redd.it/9mno99vgpf911.jpg">
+                                <img class="rounded picture" src="https://i.redd.it/9mno99vgpf911.jpg">
                             </a>
                         </div>
                     </div>
@@ -178,8 +258,10 @@
                 </div>
             </div>
         </div>
-    </div>                           <!-- End of post-->
-    <div class="container img-post"> <!-- Start of post -->
+    </div>
+    <!-- End of post-->
+    <div class="container img-post">
+        <!-- Start of post -->
         <div class="row">
             <div class="col-lg-5 offset-sm-2">
                 <div class="card">
@@ -194,7 +276,7 @@
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
                             <a href="#">
-                                    <img class="rounded picture" src="https://i.redd.it/yengvaaqxg911.jpg">
+                                <img class="rounded picture" src="https://i.redd.it/yengvaaqxg911.jpg">
                             </a>
                         </div>
                     </div>
@@ -208,8 +290,10 @@
                 </div>
             </div>
         </div>
-    </div>                           <!-- End of post-->
-    <div class="container img-post"> <!-- Start of post -->
+    </div>
+    <!-- End of post-->
+    <div class="container img-post">
+        <!-- Start of post -->
         <div class="row">
             <div class="col-lg-5 offset-sm-2">
                 <div class="card">
@@ -224,7 +308,7 @@
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
                             <a href="#">
-                                    <img class="rounded picture" src="https://i.redd.it/9atvyhfcdg911.jpg">
+                                <img class="rounded picture" src="https://i.redd.it/9atvyhfcdg911.jpg">
                             </a>
                         </div>
                     </div>
@@ -238,8 +322,10 @@
                 </div>
             </div>
         </div>
-    </div>                           <!-- End of post-->
-    <div class="container img-post"> <!-- Start of post -->
+    </div>
+    <!-- End of post-->
+    <div class="container img-post">
+        <!-- Start of post -->
         <div class="row">
             <div class="col-lg-5 offset-sm-2">
                 <div class="card">
@@ -254,7 +340,7 @@
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
                             <a href="#">
-                                    <img class="rounded picture" src="https://i.redd.it/ihgbb3rleh911.jpg   ">
+                                <img class="rounded picture" src="https://i.redd.it/ihgbb3rleh911.jpg   ">
                             </a>
                         </div>
                     </div>
@@ -268,8 +354,10 @@
                 </div>
             </div>
         </div>
-    </div>                           <!-- End of post-->
-    <div class="container img-post"> <!-- Start of post -->
+    </div>
+    <!-- End of post-->
+    <div class="container img-post">
+        <!-- Start of post -->
         <div class="row">
             <div class="col-lg-5 offset-sm-2">
                 <div class="card">
@@ -284,7 +372,7 @@
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
                             <a href="#">
-                                    <img class="rounded picture" src="https://i.redd.it/o9ds1rnyie911.jpg">
+                                <img class="rounded picture" src="https://i.redd.it/o9ds1rnyie911.jpg">
                             </a>
                         </div>
                     </div>
@@ -298,8 +386,10 @@
                 </div>
             </div>
         </div>
-    </div>                           <!-- End of post-->
-    <div class="container img-post"> <!-- Start of post -->
+    </div>
+    <!-- End of post-->
+    <div class="container img-post">
+        <!-- Start of post -->
         <div class="row">
             <div class="col-lg-5 offset-sm-2">
                 <div class="card">
@@ -314,7 +404,7 @@
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
                             <a href="#">
-                                    <img class="rounded picture" src="https://i.redd.it/aslbk4dzlg911.jpg">
+                                <img class="rounded picture" src="https://i.redd.it/aslbk4dzlg911.jpg">
                             </a>
                         </div>
                     </div>
@@ -328,8 +418,10 @@
                 </div>
             </div>
         </div>
-    </div>                           <!-- End of post-->
-    <div class="container img-post"> <!-- Start of post -->
+    </div>
+    <!-- End of post-->
+    <div class="container img-post">
+        <!-- Start of post -->
         <div class="row">
             <div class="col-lg-5 offset-sm-2">
                 <div class="card">
@@ -344,7 +436,7 @@
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
                             <a href="#">
-                                    <img class="rounded picture" src="https://i.redd.it/3q1zcfyoef911.png">
+                                <img class="rounded picture" src="https://i.redd.it/3q1zcfyoef911.png">
                             </a>
                         </div>
                     </div>
@@ -358,8 +450,10 @@
                 </div>
             </div>
         </div>
-    </div>                           <!-- End of post-->
-    <div class="container img-post"> <!-- Start of post -->
+    </div>
+    <!-- End of post-->
+    <div class="container img-post">
+        <!-- Start of post -->
         <div class="row">
             <div class="col-lg-5 offset-sm-2">
                 <div class="card">
@@ -374,7 +468,7 @@
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
                             <a href="#">
-                                    <img class="rounded picture" src="https://i.redd.it/sj1cncxcpg911.jpg">
+                                <img class="rounded picture" src="https://i.redd.it/sj1cncxcpg911.jpg">
                             </a>
                         </div>
                     </div>
@@ -388,8 +482,10 @@
                 </div>
             </div>
         </div>
-    </div>                           <!-- End of post-->
-    <div class="container img-post"> <!-- Start of post -->
+    </div>
+    <!-- End of post-->
+    <div class="container img-post">
+        <!-- Start of post -->
         <div class="row">
             <div class="col-lg-5 offset-sm-2">
                 <div class="card">
@@ -404,7 +500,7 @@
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
                             <a href="#">
-                                    <img class="rounded picture" src="https://i.redd.it/mnghlm1xbc411.png">
+                                <img class="rounded picture" src="https://i.redd.it/mnghlm1xbc411.png">
                             </a>
                         </div>
                     </div>
@@ -418,8 +514,10 @@
                 </div>
             </div>
         </div>
-    </div>                           <!-- End of post-->
-    <div class="container img-post"> <!-- Start of post -->
+    </div>
+    <!-- End of post-->
+    <div class="container img-post">
+        <!-- Start of post -->
         <div class="row">
             <div class="col-lg-5 offset-sm-2">
                 <div class="card">
@@ -434,7 +532,7 @@
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
                             <a href="#">
-                                    <img class="rounded picture" src="https://i.redd.it/ri96s0xu1ryz.jpg">
+                                <img class="rounded picture" src="https://i.redd.it/ri96s0xu1ryz.jpg">
                             </a>
                         </div>
                     </div>
@@ -448,8 +546,10 @@
                 </div>
             </div>
         </div>
-    </div>                           <!-- End of post-->
-    <div class="container img-post"> <!-- Start of post -->
+    </div>
+    <!-- End of post-->
+    <div class="container img-post">
+        <!-- Start of post -->
         <div class="row">
             <div class="col-lg-5 offset-sm-2">
                 <div class="card">
@@ -464,7 +564,7 @@
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
                             <a href="#">
-                                    <img class="rounded picture" src="https://i.imgur.com/VUr8vVs.png">
+                                <img class="rounded picture" src="https://i.imgur.com/VUr8vVs.png">
                             </a>
                         </div>
                     </div>
@@ -478,8 +578,10 @@
                 </div>
             </div>
         </div>
-    </div>                           <!-- End of post-->
-    <div class="container img-post"> <!-- Start of post -->
+    </div>
+    <!-- End of post-->
+    <div class="container img-post">
+        <!-- Start of post -->
         <div class="row">
             <div class="col-lg-5 offset-sm-2">
                 <div class="card">
@@ -494,7 +596,7 @@
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
                             <a href="#">
-                                    <img class="rounded picture" src="https://i.redd.it/0wap3cp4khm01.jpg">
+                                <img class="rounded picture" src="https://i.redd.it/0wap3cp4khm01.jpg">
                             </a>
                         </div>
                     </div>
@@ -508,7 +610,8 @@
                 </div>
             </div>
         </div>
-    </div>                           <!-- End of post-->
+    </div>
+    <!-- End of post-->
 
 
 </body>
