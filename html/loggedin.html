@@ -49,88 +49,34 @@
                     <a class="nav-link" href="#">Fresh</a>
                 </li>
             </ul>
-            <button class="btn btn-secondary" id="log-in" data-toggle="modal" data-target="#loginModal">Login</button>
-            <!-- The Modal -->
-            <div class="modal" id="loginModal">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h4 class="modal-title">Log In</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-
-                        <!-- Modal body -->
-                        <div class="modal-body">
-                            <form class="form-signin">
-
-                                <h1 class="h3 mb-3 font-weight-normal">Log In to your &copy;MemeSupreme experience maximum
-                                    <i>dankness</i>
-                                </h1>
-                                <label for="inputEmail" class="sr-only">Email address/ username</label>
-                                <input type="email" id="inputEmail" class="form-control" placeholder="Email address/ username" required autofocus>
-                                <label for="inputPassword" class="sr-only">Password</label>
-                                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                                <div class="checkbox mb-3">
-                                    <label>
-                                        <input type="checkbox" value="remember-me"> Remember me
-                                    </label>
-                                </div>
-                                <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
-                                <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
-                            </form>
-                        </div>
-
-
-
-                    </div>
-                </div>
-            </div>
-            <button class="btn btn-primary" id="sign-up" data-toggle="modal" data-target="#signupModal">Sign Up</button>
-            <!-- The Modal -->
-            <div class="modal" id="signupModal">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h4 class="modal-title">Sign Up</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-
-                        <!-- Modal body -->
-                        <div class="modal-body">
-                            <form class="form-signin">
-
-                                <h1 class="h3 mb-3 font-weight-normal">Sign Up for a &copy;MemeSupreme account and experience a new dimension of
-                                    <i>litness</i>
-                                </h1>
-                                <label for="inputEmail" class="sr-only">Email address</label>
-                                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                                <label for="inputUsername" class="sr-only">Username</label>
-                                <input type="password" id="inputUsername" class="form-control" placeholder="Username" required>
-                                <label for="inputPassword" class="sr-only">Password</label>
-                                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                                <div class="checkbox mb-3">
-                                    <label>
-                                        <input type="checkbox" value="remember-me"> Remember me
-                                    </label>
-                                </div>
-                                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
-                                <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <button id="logout" class="btn btn-dark" href="">Logout</button>
+            <a id="profile-btn" class="btn btn-outline-light" href="profile.html">Profile</a>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-light btn-lg my-2 my-sm-0 fa fa-search " type="submit"></button>
             </form>
         </div>
     </nav>
-
+    <!-- Upload a Meme -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 offset-sm-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><strong>Upload a Meme</strong> </h2>
+                    </div>
+                    <div class="card-body">
+                        <form class="form-inline my-0 my-lg-0">
+                            <input type="file" class="form-control-file border  input input-lg" name="file">
+                            <input class="form-control   input-lg" type="text" placeholder="Meme Title" aria-label="Upload">
+                            <input class="form-control   input-lg" type="text" placeholder="Meme Tags" aria-label="Upload">
+                            <button class="btn btn-dark btn-lg my-2 my-sm-1 " type="submit">Upload Meme</button>
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Posts -->
     <div class="container img-post">
         <!-- Start of post -->

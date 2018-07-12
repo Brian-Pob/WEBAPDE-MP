@@ -9,7 +9,7 @@
     width: 100%;
 }
 
-#sign-up, #log-in{
+#sign-up, #log-in, #profile-btn, #logout{
     margin-right: 5px;
 }
 
@@ -20,4 +20,5 @@
     width: 150px;
     height: auto;
     overflow: hidden;
+    border-radius: 50%;
 }
