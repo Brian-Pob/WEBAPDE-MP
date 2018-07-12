@@ -81,38 +81,86 @@
 Each user has their own page which shows their profile publicly. 
 On the same page, a visitor may see the user’s username and their short description. 
 They may also see a portion of the user’s latest memes. 
-The visitor may opt to see the rest of the memes. 
-It is up to the group if this going to be loaded on the same page or a different one.--> 
+The visitor may opt to see the rest of the memes. .--> 
     
     <div class="container profile">
         <div class="row">
-            <div class="profile info">
-                <div class="profile img">
-                    <img class="rounded-circle userpic"  src="../imgs/profilepic.jpg">
-                </div>
-                <div class="profile username">
-                    <h3>Deminishoki</h3>
-                </div>
-                <div class="profile desciption">
-                    <small>Description</small>
+            <div class="col-lg-7 mx-auto">
+                <div class="profile info">
+                    <div class="profile img">
+                        <img class="rounded-circle userpic"  src="../imgs/profilepic.jpg">
+                    </div>
+                    <div class="profile username">
+                        <h3>Deminishoki</h3>
+                    </div>
+                    <div class="profile desciption">
+                        <small>I really love memes. I own 14 cats.</small>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- THIS IS SUPPOSED TO BE A DIVIDER OF THE PROFILE CONTAINER SAYING "DEMINISHOKI'S POSTS " something like that. --> 
-    
+    <hr>
     <div class="container overview">
-        <div class"row">
-            Posts
+        <div class="row">
+            <div class="col-lg-7 mx-auto">
+                <br>
+                <h4>Deminishoki's Recent Posts</h4>
+                <br>
+            </div>
         </div>
     </div>
-    
 <!-- This is the profile's posts-->
     
   <div class="container img-post">
     <div class="row">
-      <div class="col-lg-7 offset-sm-2">
+      <div class="col-lg-7 mx-auto">
+        <div class="card">
+          <div class="card-header">
+              <h3><strong>Oh please help me I think Im addicted</strong></h3>
+              <p><small>45,234 points ° 51 comments</small></p>
+          </div>
+          <div class="card-body">
+            <div class="pb-2 mt-4 mb-2 border-bottom">
+              
+              <img class="rounded"src="../imgs/wf.jpg">
+              <a class="btn fab fa-facebook fa-2x"></a>
+              <a class="btn fab fa-twitter fa-2x"></a>
+              <a class="btn btn-default">More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /This is one post--> 
+    
+    <div class="container img-post">
+    <div class="row">
+      <div class="col-lg-7 mx-auto">
+        <div class="card">
+          <div class="card-header">
+              <h3><strong>I still really love this game!</strong></h3>
+              <p><small>1,000 points ° 40 comments</small></p>
+          </div>
+          <div class="card-body">
+            <div class="pb-2 mt-4 mb-2 border-bottom">
+              
+              <img class="rounded"src="../imgs/wf.jpg">
+              <a class="btn fab fa-facebook fa-2x"></a>
+              <a class="btn fab fa-twitter fa-2x"></a>
+              <a class="btn btn-default">More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    <div class="container img-post">
+    <div class="row">
+      <div class="col-lg-7 mx-auto">
         <div class="card">
           <div class="card-header">
               <h3><strong>I love this game!</strong></h3>
@@ -131,7 +179,22 @@ It is up to the group if this going to be loaded on the same page or a different
       </div>
     </div>
   </div>
-  <!-- /This is one post-->
+    
+    <br>
+    
+    <div class="container showmore">
+    <div class="row">
+      <div class="col-lg-7 mx-auto">
+        <div class="card">
+          <div class="card-header">
+              <h4>Show me more</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    <br>
   
 </body>
 
