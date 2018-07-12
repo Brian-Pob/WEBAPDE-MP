@@ -12,3 +12,12 @@
 #sign-up, #log-in{
     margin-right: 5px;
 }
+
+
+/*  PROFILE STYLING   */
+
+.userpic{
+    width: 150px;
+    height: auto;
+    overflow: hidden;
+}
