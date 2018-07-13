@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
 </head>
 
 <body>
@@ -37,7 +38,7 @@
                             <a class="dropdown-item" href="#">Funny</a>
                             <a class="dropdown-item" href="#">Gaming</a>
                             <a class="dropdown-item" href="#">Technology</a>
-
+                            <a class="dropdown-item" href="#">Ded</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -51,8 +52,8 @@
                     </li>
                 </ul>
                 <a id="profile-btn" class="btn btn-outline-light" href="profile.html">Profile</a>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="form-inline my-2 my-lg-0" onsubmit="return checkIfTag()">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search By Tag" aria-label="Search" id="searchbar">
                 </form>
                 <a id="logout" class="btn btn-dark" href="index.html">Logout</a>
                 <!-- TODO: Add modal for logout -->
@@ -156,7 +157,8 @@
                                 <button class="btn btn-outline-secondary  fa-2x fas fa-comment-alt"></button>
                                 <button class="btn btn-outline-dark btn-lg">Edit Tags</button>
                                 <div>
-                                   <label><b>Anonymous: </b>This game is amazing!</label>
+                                    <label>
+                                        <b>Anonymous: </b>This game is amazing!</label>
                                 </div>
                                 <div>
                                     <input type="text" class="commentBox" placeholder="Add a comment...">
@@ -642,58 +644,58 @@
             </div>
         </div>
     </div>
-    
+
     <br>
     <hr class="rgba-white-light" style="margin: 0 15%;">
     <!-- Footer -->
     <footer class="page-footer font-small indigo footerdiv">
 
-    <!-- Footer Links -->
-    <div class="container">
+        <!-- Footer Links -->
+        <div class="container">
 
-      <!-- Grid row-->
-      <div class="row text-center d-flex justify-content-center pt-3 mb-3">
+            <!-- Grid row-->
+            <div class="row text-center d-flex justify-content-center pt-3 mb-3">
 
-        <!-- Grid column -->
-        <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase">
-            <a href="#!">About us</a>
-          </h6>
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase">
+                        <a href="#!">About us</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase">
+                        <a href="sitemap.html">Sitemap</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase">
+                        <a href="#!">Help</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase">
+                        <a href="#!">Contact</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+
+            </div>
+
         </div>
-        <!-- Grid column -->
+        <!-- Footer Links -->
 
-        <!-- Grid column -->
-        <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase">
-            <a href="sitemap.html">Sitemap</a>
-          </h6>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase">
-            <a href="#!">Help</a>
-          </h6>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase">
-            <a href="#!">Contact</a>
-          </h6>
-        </div>
-        <!-- Grid column -->
-
-      </div>
-
-    </div>
-    <!-- Footer Links -->
-
-  </footer>
-  <!-- Footer -->
-  <!-- Footer -->
+    </footer>
+    <!-- Footer -->
+    <!-- Footer -->
 
 </body>
 
