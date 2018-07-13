@@ -15,6 +15,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container">
         <a class="navbar-brand" href="#">
             <strong>MemeSupreme</strong>
         </a>
@@ -49,6 +50,9 @@
                     <a class="nav-link" href="#">Fresh</a>
                 </li>
             </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
             <button class="btn btn-secondary" id="log-in" data-toggle="modal" data-target="#loginModal">Login</button>
             <!-- The Modal -->
             <div class="modal fade" id="loginModal">
@@ -124,12 +128,12 @@
                     </div>
                 </div>
             </div>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-light btn-lg my-2 my-sm-0 fa fa-search " type="submit"></button>
-            </form>
+        </div>
         </div>
     </nav>
+    
+    
+
 
     <!-- Posts -->
     <div class="container img-post">
