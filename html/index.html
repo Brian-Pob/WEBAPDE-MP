@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="modal.js"></script>
 </head>
 
 <body>
@@ -173,6 +174,29 @@
         </div>
     </div>
     <!-- End of post-->
+    <!-- Start of Modal Post -->
+    <!-- Trigger the Modal -->
+       <div>
+           <img id="myImg" src="../imgs/wf.jpg" alt="pic" style="width:100%;max-width:300px" onclick="ModalImg()">
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+          <!-- The Close Button -->
+          <span class="close">&times;</span>
+
+          <!-- Modal Content (The Image) -->
+          <img class="modal-content" id="img01">
+
+          <!-- Modal Caption (Image Text) -->
+          <div id="comment"></div>
+        </div>
+       </div>
+        
+    
+    
+    
+    <!-- End of Modal Post -->
     <div class="container img-post">
         <!-- Start of post -->
         <div class="row">
