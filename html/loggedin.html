@@ -16,47 +16,47 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container">
-        <a class="navbar-brand" href="#">
-            <strong>MemeSupreme</strong>
-        </a>
+            <a class="navbar-brand" href="#">
+                <strong>MemeSupreme</strong>
+            </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
-                        Sort By Tag
-                    </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Sort By Tag
+                        </a>
 
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Funny</a>
-                        <a class="dropdown-item" href="#">Gaming</a>
-                        <a class="dropdown-item" href="#">Technology</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Funny</a>
+                            <a class="dropdown-item" href="#">Gaming</a>
+                            <a class="dropdown-item" href="#">Technology</a>
 
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Hot</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Trending</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Fresh</a>
-                </li>
-            </ul>
-            <a id="profile-btn" class="btn btn-outline-light" href="profile.html">Profile</a>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            </form>
-            <a id="logout" class="btn btn-dark" href="index.html">Logout</a>
-            <!-- TODO: Add modal for logout -->
-        </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hot</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Trending</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Fresh</a>
+                    </li>
+                </ul>
+                <a id="profile-btn" class="btn btn-outline-light" href="profile.html">Profile</a>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+                <a id="logout" class="btn btn-dark" href="index.html">Logout</a>
+                <!-- TODO: Add modal for logout -->
+            </div>
         </div>
     </nav>
     <!-- Upload a Meme -->
@@ -65,23 +65,30 @@
             <div class="col-lg-6 mx-auto">
                 <div class="card">
                     <div class="card-header">
-                        <h2><strong>Upload a Meme</strong> </h2>
+                        <h2>
+                            <strong>Upload a Meme</strong>
+                        </h2>
                     </div>
                     <div class="card-body uploadingcontent">
                         <form class="my-0 my-lg-0">
                             <div class="upload content">
-                                <input class="form-control input-lg" type="text" placeholder="Meme Title" aria-label="Upload"><br>
-                                <input type="file" class="form-control-file border input input-lg" name="file"><br>
-                                <input class="form-control input-lg" type="text" placeholder="Meme Tags" aria-label="Upload"><br>
-                                <div class="uploadbtn"><button class="btn btn-dark btn-lg my-2 my-sm-1" type="submit">Upload Meme</button></div>
+                                <input class="form-control input-lg" type="text" placeholder="Meme Title" aria-label="Upload">
+                                <br>
+                                <input type="file" class="form-control-file border input input-lg" name="file">
+                                <br>
+                                <input class="form-control input-lg" type="text" placeholder="Meme Tags" aria-label="Upload">
+                                <br>
+                                <div class="uploadbtn">
+                                    <button class="btn btn-dark btn-lg my-2 my-sm-1" type="submit">Upload Meme</button>
+                                </div>
                             </div>
-                        </form> 
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!-- Posts -->
     <div class="container img-post">
         <!-- Start of post -->
@@ -95,13 +102,13 @@
                         <span class="badge badge-primary">Gaming</span>
                         <p>
                             <small>1,234 points · 56 comments</small>
-                            
+
                         </p>
                         <span class="badge badge-success badge-default badge-pill">Your Post</span>
                     </div>
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
-                            <a href="#">
+                            <a data-toggle="modal" data-target="#wfModal">
                                 <img class="rounded picture" src="../imgs/wf.jpg">
                             </a>
                         </div>
@@ -113,6 +120,43 @@
                         <button class="btn btn-outline-info fa-2x fab fa-twitter "></button>
                         <button class="btn btn-outline-secondary  fa-2x fas fa-comment-alt"></button>
                         <button class="btn btn-outline-dark btn-lg">Edit Tags</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="wfModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>
+                                    <strong>I love this game!</strong>
+                                </h3>
+                                <span class="badge badge-primary">Gaming</span>
+                                <p>
+                                    <small>1,234 points · 56 comments</small>
+
+                                </p>
+                                <span class="badge badge-success badge-default badge-pill">Your Post</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="pb-2 mt-4 mb-2 ">
+                                    <a href="#">
+                                        <img class="rounded picture" src="../imgs/wf.jpg">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-success fa-2x fas fa-arrow-up"></button>
+                                <button class="btn btn-outline-danger fa-2x fas fa-arrow-down"></button>
+                                <button class="btn btn-outline-primary  fa-2x fab fa-facebook-f"></button>
+                                <button class="btn btn-outline-info fa-2x fab fa-twitter "></button>
+                                <button class="btn btn-outline-secondary  fa-2x fas fa-comment-alt"></button>
+                                <button class="btn btn-outline-dark btn-lg">Edit Tags</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
