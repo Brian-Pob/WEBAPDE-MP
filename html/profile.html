@@ -3,73 +3,73 @@
 
 <head>
 
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
-  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
-  <script src="../js/jquery-3.3.1.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
-  
-  
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+
 </head>
 
 <body>
-  <!-- Navbar -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container">
-        <a class="navbar-brand" href="loggedin.html">
-            <strong>MemeSupreme</strong>
-        </a>
+            <a class="navbar-brand" href="loggedin.html">
+                <strong>MemeSupreme</strong>
+            </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
-                        Sort By Tag
-                    </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Sort By Tag
+                        </a>
 
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Funny</a>
-                        <a class="dropdown-item" href="#">Gaming</a>
-                        <a class="dropdown-item" href="#">Technology</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Funny</a>
+                            <a class="dropdown-item" href="#">Gaming</a>
+                            <a class="dropdown-item" href="#">Technology</a>
 
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Hot</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Trending</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Fresh</a>
-                </li>
-            </ul>
-            <a id="profile-btn" class="btn btn-outline-light" href="profile.html">Profile</a>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            </form>
-            <a id="logout" class="btn btn-dark" href="index.html">Logout</a>
-        </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hot</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Trending</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Fresh</a>
+                    </li>
+                </ul>
+                <a id="profile-btn" class="btn btn-outline-light" href="profile.html">Profile</a>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+                <a id="logout" class="btn btn-dark" href="index.html">Logout</a>
+            </div>
         </div>
     </nav>
 
-  <!-- Main Body -->
+    <!-- Main Body -->
 
     <div class="container profile">
         <div class="row">
             <div class="col-lg-7 mx-auto">
                 <div class="profile info">
                     <div class="profile img">
-                        <img class="rounded-circle userpic"  src="../imgs/profilepic.jpg">
+                        <img class="rounded-circle userpic" src="../imgs/profilepic.jpg">
                     </div>
                     <div class="profile username">
                         <h3>Deminishoki</h3>
@@ -81,7 +81,7 @@
             </div>
         </div>
     </div>
-    
+
     <hr>
     <div class="container overview">
         <div class="row">
@@ -92,76 +92,106 @@
             </div>
         </div>
     </div>
-<!-- This is the profile's posts-->
-    
-  <div class="container img-post">
-    <div class="row">
-      <div class="col-lg-7 mx-auto">
-        <div class="card">
-          <div class="card-header">
-              <h3><strong>Oh please help me I think Im addicted</strong></h3>
-              <p><small>45,234 points ° 51 comments</small></p>
-          </div>
-          <div class="card-body">
-            <div class="pb-2 mt-4 mb-2 border-bottom">
-              
-              <img class="rounded"src="../imgs/wf.jpg">
-              <a class="btn fab fa-facebook fa-2x"></a>
-              <a class="btn fab fa-twitter fa-2x"></a>
-              <a class="btn btn-default">More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> 
-    
+    <!-- This is the profile's posts-->
+
     <div class="container img-post">
-    <div class="row">
-      <div class="col-lg-7 mx-auto">
-        <div class="card">
-          <div class="card-header">
-              <h3><strong>I still really love this game!</strong></h3>
-              <p><small>1,000 points ° 40 comments</small></p>
-          </div>
-          <div class="card-body">
-            <div class="pb-2 mt-4 mb-2 border-bottom">
-              
-              <img class="rounded"src="../imgs/wf.jpg">
-              <a class="btn fab fa-facebook fa-2x"></a>
-              <a class="btn fab fa-twitter fa-2x"></a>
-              <a class="btn btn-default">More</a>
+        <div class="row">
+            <div class="col-lg-7 mx-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            <strong>Oh please help me I think Im addicted</strong>
+                        </h3>
+                        <p>
+                            <small>45,234 points ° 51 comments</small>
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="pb-2 mt-4 mb-2 border-bottom">
+
+                            <img class="rounded" src="../imgs/wf.jpg">
+                            
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-outline-success fa-2x fas fa-arrow-up"></button>
+                        <button class="btn btn-outline-danger fa-2x fas fa-arrow-down"></button>
+                        <button class="btn btn-outline-primary  fa-2x fab fa-facebook-f"></button>
+                        <button class="btn btn-outline-info fa-2x fab fa-twitter "></button>
+                        <button class="btn btn-outline-secondary  fa-2x fas fa-comment-alt"></button>
+                        <button class="btn btn-outline-dark btn-lg">Edit Tags</button>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-    
+
     <div class="container img-post">
-    <div class="row">
-      <div class="col-lg-7 mx-auto">
-        <div class="card">
-          <div class="card-header">
-              <h3><strong>I love this game!</strong></h3>
-              <p><small>1,234 points ° 56 comments</small></p>
-          </div>
-          <div class="card-body">
-            <div class="pb-2 mt-4 mb-2 border-bottom">
-              
-              <img class="rounded"src="../imgs/wf.jpg">
-              <a class="btn fab fa-facebook fa-2x"></a>
-              <a class="btn fab fa-twitter fa-2x"></a>
-              <a class="btn btn-default">More</a>
+        <div class="row">
+            <div class="col-lg-7 mx-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            <strong>I still really love this game!</strong>
+                        </h3>
+                        <p>
+                            <small>1,000 points ° 40 comments</small>
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="pb-2 mt-4 mb-2 border-bottom">
+
+                            <img class="rounded" src="../imgs/wf.jpg">
+
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-outline-success fa-2x fas fa-arrow-up"></button>
+                        <button class="btn btn-outline-danger fa-2x fas fa-arrow-down"></button>
+                        <button class="btn btn-outline-primary  fa-2x fab fa-facebook-f"></button>
+                        <button class="btn btn-outline-info fa-2x fab fa-twitter "></button>
+                        <button class="btn btn-outline-secondary  fa-2x fas fa-comment-alt"></button>
+                        <button class="btn btn-outline-dark btn-lg">Edit Tags</button>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-    
+
+    <div class="container img-post">
+        <div class="row">
+            <div class="col-lg-7 mx-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            <strong>I love this game!</strong>
+                        </h3>
+                        <p>
+                            <small>1,234 points ° 56 comments</small>
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="pb-2 mt-4 mb-2 border-bottom">
+
+                            <img class="rounded" src="../imgs/wf.jpg">
+                            
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-outline-success fa-2x fas fa-arrow-up"></button>
+                        <button class="btn btn-outline-danger fa-2x fas fa-arrow-down"></button>
+                        <button class="btn btn-outline-primary  fa-2x fab fa-facebook-f"></button>
+                        <button class="btn btn-outline-info fa-2x fab fa-twitter "></button>
+                        <button class="btn btn-outline-secondary  fa-2x fas fa-comment-alt"></button>
+                        <button class="btn btn-outline-dark btn-lg">Edit Tags</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <br>
-    
+
     <div class="container showmore">
         <div class="row">
             <div class="col-lg-7 mx-auto">
@@ -173,9 +203,9 @@
             </div>
         </div>
     </div>
-    
+
     <br>
-  
+
 </body>
 
 </html>
