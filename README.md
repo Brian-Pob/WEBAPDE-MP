@@ -1,8 +1,6 @@
-WEBAPDE MP Phase 1
+WEBAPDE MP Phase 2
 Brian Poblete, Ma. Lourdes Fernandez, Kyle Sim
 
-Meme-sharing site using HTML, CSS, and JavaScript
+Meme-sharing site using HTML, CSS, JavaScript, and NodeJS.
 
-SiteMap is in html/sitemap.html
-
-site hosted at https://brian-pob.github.io/WEBAPDE-MP/
+site hosted at heroku
