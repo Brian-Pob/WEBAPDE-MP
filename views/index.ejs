@@ -15,10 +15,12 @@
 </head>
 
 <body>
+    <% var data = {user:'brian', _id:'123'}%>
     <% if(data.user === undefined && data._id === undefined){ %>
     <%- include navbar %>
-    <%} else { %>
+    <% } else { %>
     <%- include loggedinnavbar %>
+    <% }%>
 
     <!-- Posts -->
     <!-- Start of post -->
