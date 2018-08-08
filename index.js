@@ -27,7 +27,9 @@ const loginSchema = new mongoose.Schema({
 const loginModel = mongoose.model('users', loginSchema)
 
 server.get('/', function(req, resp){
-    resp.render('./index')
+    resp.render('./index', {
+        logindata: undefined
+    })
 })
 
 server.post('/signup', function(req, resp){
@@ -40,6 +42,23 @@ server.post('/signup', function(req, resp){
         if(err) return console.error(err)
         else
             resp.render('./profilepage')
+    })
+})
+
+server.post('/login', function(req, resp){
+    const searchQuery = {
+        user: req.body.inputUsernameLogin,
+        pass: req.body.inputPasswordLogin
+    }
+
+    loginModel.findOne(searchQuery, function(err, login){
+        if(err) return console.error(err)
+        if(login !== undefined && login._id !== null){
+            resp.redirect('/?login=success')
+        }else{
+            resp.redirect('/?login=failed')
+        }
+
     })
 })
 const port = process.env.PORT | 9090
