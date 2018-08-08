@@ -101,5 +101,16 @@ server.post('/login', function(req, resp){
 
     })
 })
+
+server.get('/logout', function(req, resp){
+    var emptyData = {
+        _id: 'empty',
+        user: 'empty',
+        pass: 'empty'
+    }
+    resp.render('./index', {
+        data: emptyData
+    })
+})
 const port = process.env.PORT | 9090
 server.listen(port)
