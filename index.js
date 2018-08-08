@@ -8,18 +8,9 @@ const bodyParser = require('body-parser')
 server.use(bodyParser.urlencoded({extended:true}))
 server.use(bodyParser.json())
 
-const mongoStore = require('connect-mongo')(session);
+
 const session = require('express-session')
-server.use(session({
-    secret: 'meme supreme',
-    resave: false,
-    saveUninitialized: true,
-    store: new mongoStore({
-        mongooseConnection: mongoose.connection,
-        ttl: 60 * 60,
-        autoRemove: 'native'
-    })
-}))
+const mongoStore = require('connect-mongo')(session);
 
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost:27017/memedb',{useNewUrlParser: true})
@@ -35,6 +26,16 @@ const loginSchema = new mongoose.Schema({
     versionKey: false
 })
 
+server.use(session({
+    secret: 'meme supreme',
+    resave: false,
+    saveUninitialized: true,
+    store: new mongoStore({
+        mongooseConnection: mongoose.connection,
+        ttl: 60 * 60,
+        autoRemove: 'native'
+    })
+}))
 const loginModel = mongoose.model('login', loginSchema)
 server.use(express.static(__dirname + '/public'));
 server.set('view engine', 'ejs')
@@ -52,7 +53,7 @@ server.post('/login', function(req, resp){
     }
     loginModel.findOne(searchQuery, function(req, login){
         if(login !== undefined && login._id !== undefined){
-            req.session.user = login.user
+            req.session.user = login._id
             resp.render('./index', {
                 data: login
             })
