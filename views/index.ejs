@@ -15,7 +15,11 @@
 </head>
 
 <body>
+    <% if(data._id === 'empty'){%>
     <%- include navbar %>
+    <%} else {%>
+    <%- include loggedinnavbar %>
+    <%} %>
 
     <!-- Posts -->
     <!-- Start of post -->

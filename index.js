@@ -27,8 +27,13 @@ const loginSchema = new mongoose.Schema({
 const loginModel = mongoose.model('users', loginSchema)
 
 server.get('/', function(req, resp){
+    var emptyData = {
+        _id: 'empty',
+        user: 'empty',
+        pass: 'empty'
+    }
     resp.render('./index', {
-        logindata: undefined
+        data: emptyData
     })
 })
 
@@ -54,7 +59,11 @@ server.post('/login', function(req, resp){
     loginModel.findOne(searchQuery, function(err, login){
         if(err) return console.error(err)
         if(login !== undefined && login._id !== null){
-            resp.redirect('/?login=success')
+            // resp.redirect('/?login=success')
+            var logindata = {login: login}
+            resp.render('./index', {
+                data: logindata
+            })
         }else{
             resp.redirect('/?login=failed')
         }
