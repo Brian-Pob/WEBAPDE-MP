@@ -8,6 +8,8 @@ const bodyParser = require('body-parser')
 server.use(bodyParser.urlencoded({extended:true}))
 server.use(bodyParser.json())
 
+const crypto = require('crypto')
+
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost:27017/memedb',{useNewUrlParser: true})
 
@@ -63,10 +65,11 @@ server.get('/', function(req, resp){
 server.post('/signup', function(req, resp){
     var dt = dateTime.create();
     var dtFormat = dt.format('m/d/Y')
-    
+    var password = req.body.inputPasswordSignup
+
     const userInstance = userModel({
         user: req.body.inputUsernameSignup,
-        pass: req.body.inputPasswordSignup,
+        pass: crypto.createHash('md5').update(password).digest('hex'),
         datejoined: dtFormat,
         profilePic: 'imgs/blank-profile.jpg',
         posts: []
@@ -82,9 +85,11 @@ server.post('/signup', function(req, resp){
 })
 
 server.post('/login', function(req, resp){
+    var password = req.body.inputPasswordLogin
+
     const searchQuery = {
         user: req.body.inputUsernameLogin,
-        pass: req.body.inputPasswordLogin
+        pass: crypto.createHash('md5').update(password).digest('hex')
     }
 
     userModel.findOne(searchQuery, function(err, login){
@@ -110,6 +115,14 @@ server.get('/logout', function(req, resp){
     }
     resp.render('./index', {
         data: emptyData
+    })
+})
+
+server.get('/gotoprofile', function(req, resp){
+    var data = req.data
+    userModel.findOne()
+    resp.render('./profilepage', {
+        data:data
     })
 })
 const port = process.env.PORT | 9090
