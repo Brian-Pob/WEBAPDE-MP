@@ -10,10 +10,26 @@ server.use(bodyParser.json())
 
 const crypto = require('crypto')
 
+const session = require('express-session')
+const mongoStore = require('connect-mongo')(session)
+
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost:27017/memedb',{useNewUrlParser: true})
 
-var dateTime = require('node-datetime')
+server.use(session({
+    secret: 'memes',
+    resave: false,
+    saveUninitialized: true,
+    store: new mongoStore({
+        mongooseConnection: mongoose.connection,
+        ttl: 60*60,
+        autoRemove: 'native'
+    })
+}))
+
+const dateTime = require('node-datetime')
+
+
 
 server.use(express.static(__dirname + '/public'));
 server.set('view engine', 'ejs')
@@ -77,10 +93,13 @@ server.post('/signup', function(req, resp){
 
     userInstance.save(function(err, res){
         if(err) return console.error(err)
-        else
+        else{
+            req.session.user = userInstance.user
             resp.render('./index', {
                 data: userInstance
             })
+        }
+            
     })
 })
 
@@ -96,9 +115,11 @@ server.post('/login', function(req, resp){
         if(err) return console.error(err)
         if(login !== undefined && login._id !== null){
             // resp.redirect('/?login=success')
-            var logindata = {login: login}
+            req.session.user = login.user
+            console.log(req.session.user)
+            
             resp.render('./index', {
-                data: logindata
+                data: login
             })
         }else{
             resp.redirect('/?login=failed')
@@ -118,9 +139,15 @@ server.get('/logout', function(req, resp){
     })
 })
 
-server.get('/gotoprofile', function(req, resp){
-    var data = req.data
-    userModel.findOne()
+server.get('/visitprofile', function(req, resp){
+    var searchQuery = {
+        user: req.session.user
+    }
+    userModel.findOne(searchQuery, function(err, user){
+        //get user posts
+        //get user date joined
+        //get user posts
+    })
     resp.render('./profilepage', {
         data:data
     })
