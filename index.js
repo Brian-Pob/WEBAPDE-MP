@@ -40,17 +40,6 @@ const dateTime = require('node-datetime')
 server.use(express.static(__dirname + '/public'));
 server.set('view engine', 'ejs')
 
-// const loginSchema = new mongoose.Schema({
-//     user: {
-//         type: String
-//     },
-//     pass: {
-//         type: String
-//     }
-// }, {
-//     versionKey: false
-// })
-// const loginModel = mongoose.model('users', loginSchema)
 
 const userSchema = new mongoose.Schema({
     user: {

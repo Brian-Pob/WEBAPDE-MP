@@ -1,0 +1,89 @@
+<div class="container img-post">
+
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3>
+                        <strong><%= post.title %></strong>
+                        <!-- Post title -->
+                    </h3>
+                    <% for (var i = 0; i < post.tags.length(); i++){ %>
+                    <span class="badge badge-primary"><%= post.tags[i] %></span>
+                    <%} %>
+                    <!-- post tags -->
+                    <p>
+                        <small><%= post.comments.length() %></small>
+                        <!-- Points and comment count -->
+                    </p>
+
+                </div>
+                <div class="card-body">
+                    <div class="pb-2 mt-4 mb-2 ">
+                        <a data-toggle="modal" data-target="#wfModal">
+                            <img class="rounded picture" src="<%= post.url %>">
+                            <!-- img url -->
+                        </a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline-success fa-2x fas fa-arrow-up"></button>
+                    <button class="btn btn-outline-danger fa-2x fas fa-arrow-down"></button>
+                    <button class="btn btn-outline-primary  fa-2x fab fa-facebook-f"></button>
+                    <button class="btn btn-outline-info fa-2x fab fa-twitter "></button>
+                    <button class="btn btn-outline-secondary  fa-2x fas fa-comment-alt"></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Start of Modal -->
+    <div class="modal fade" id="wfModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="card">
+                        <h3>
+                            <strong><%= post.title %></strong>
+                            <!-- Post title -->
+                        </h3>
+                        <% for (var i = 0; i < post.tags.length(); i++){ %>
+                        <span class="badge badge-primary"><%= post.tags[i] %></span>
+                        <%} %>
+                        <!-- post tags -->
+                        <p>
+                            <small><%= post.comments.length() %></small>
+                            <!-- Points and comment count -->
+                        </p>
+                        <div class="card-body">
+                            <div class="pb-2 mt-4 mb-2 ">
+                                <a href="#wfModal">
+                                    <img class="rounded picture" src="<%= post.url %>">
+                                    <!-- Post source -->
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-success fa-2x fas fa-arrow-up"></button>
+                            <button class="btn btn-outline-danger fa-2x fas fa-arrow-down"></button>
+                            <button class="btn btn-outline-primary  fa-2x fab fa-facebook-f"></button>
+                            <button class="btn btn-outline-info fa-2x fab fa-twitter "></button>
+                            <button class="btn btn-outline-secondary  fa-2x fas fa-comment-alt"></button>
+                            <div>
+                                <label>
+                                    <b>Anonymous: </b>This game is amazing!</label>
+                            </div>
+                            <div>
+                                <input type="text" class="commentBox" placeholder="Add a comment...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Modal -->
+</div>
+<!-- End of post-->
