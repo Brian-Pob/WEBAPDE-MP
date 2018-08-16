@@ -1,0 +1,27 @@
+.center-focused{
+    width: 80%;
+    padding: 40px 10%;
+    margin: 40px 10%;
+    text-align: center;
+}
+
+.center-focused img{
+    border-radius: 25px;
+}
+
+.center-focused input.btn{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.hide-prompt{
+    display: none;
+}
+
+.item-icon img{
+  max-width: 50px;
+  border-radius: 0px;
+}
+
+.item-label{
+    font-size: 20px;
