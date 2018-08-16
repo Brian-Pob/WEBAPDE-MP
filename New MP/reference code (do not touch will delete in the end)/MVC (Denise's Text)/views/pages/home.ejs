@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Shopping Cart Page</title>
+    <% include ../common/meta-header.ejs %>
+  </head>
+  <body>
+     <div class='center-focused jumbotron'>
+        <h6>New Text</h6>
+        <form name='add-texti' action='system-processing/addtexti-result'
+            method='post' enctype="multipart/form-data">
+          <label>Text</label><br />
+          <input type='text' name='texti'><br />
+          <br />
+          <input type='submit' class='btn btn-primary' value='Add'>
+        </form>
+    </div>
+      
+      <br>
+      
+     <div class='center-focused jumbotron'>
+        <h6>Submitted Text</h6>
+        <form name='delete-texti' action='system-processing/deletetexti-result'
+            method='post' enctype="multipart/form-data">
+        <table><% for(var i=0;i<data.list.length;i++){ %>
+          <tr>
+            <td class='item-label'>
+              <label>Text: <%= data.list[i].texti %></label><br />
+            </td>
+            <td>
+            <input type='submit' class='btn btn-primary' value='Delete'>
+            </td>
+          </tr>
+        <% } %></table>
+            
+        </form>
+        
+    </div>
+     <% include ../common/body-footer %>
+  </body>
+</html>

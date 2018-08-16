@@ -47,24 +47,13 @@ server.set('view engine', 'ejs')
 // const loginModel = mongoose.model('users', loginSchema)
 
 const userSchema = new mongoose.Schema({
-    user: {
-        type: String
-    },
-    pass: {
-        type: String
-    },
-    datejoined: {
-        type: String
-    },
-    profilePic: {
-        type: String
-    },
-    posts: {
-        type: [String]
-    }
-}, {
-    versionKey: false
-})
+    user:       {type: String},
+    pass:       {type: String},
+    datejoined: {type: String},
+    profilePic: {type: String},
+    posts:      {type: [String]}
+}, {versionKey: false})
+
 const userModel = mongoose.model('users', userSchema)
 
 server.get('/', function(req, resp){
