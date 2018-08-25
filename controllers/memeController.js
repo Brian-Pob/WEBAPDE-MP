@@ -24,6 +24,43 @@ function memeModule(server){
     
 }
 
+    server.get('/viewPublicMemes', function (req, resp){
+        
+    })
+
+    server.get('/viewProfileMemes', function (req, resp){
+        
+    })
+
+    server.get('/viewMemeSearchByName', function (req, resp){
+        
+    })
+
+    server.get('/viewMemeSearchByTag', function (req, resp){
+        
+    })
+
+    server.get('/uploadMeme', function (req, resp){
+        
+    })
+
+    server.get('/editMeme', function (req, resp){
+        
+    })
+
+    server.get('/deleteMeme', function (req, resp){
+        
+    })
+    
+    server.get('/searchMemeByName', function (req, resp){
+        
+    })
+
+    server.get('/searchMemeByTag', function (req, resp){
+        
+    })
+
+    
 
 
 module.exports.Activate = memeModule;
