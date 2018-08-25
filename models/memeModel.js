@@ -68,9 +68,7 @@ function viewMemesbySearchTag(){
     
 }
 
-function uploadMeme(){
-    
-}
+
 
 function editMeme(){
     
