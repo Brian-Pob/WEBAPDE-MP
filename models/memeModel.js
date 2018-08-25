@@ -23,6 +23,32 @@ const memeSchema = new mongoose.Schema({
     }
 })
 
+
+const memeModel = mongoose.model('posts', memeSchema)
+
+function createMeme(memeTitle, memeImageLink, memePoster, memeTags, callback){
+    var dt = dateTime.create()
+    var dtFormat = dt.format('m/d/Y')
+
+    const memeInstance = memeModel({
+        user: memePoster,
+        title: memeTitle,
+        image: memeImageLink,
+        comments: [],
+        tags: memeTags,
+        datePosted: dtFormat
+    })
+
+    memeInstance.save(function (err, res) {
+        if (err)  return console.error(err)
+        else {
+            callback()
+        }
+    })
+}
+
+module.exports.createMeme = createMeme
+
 function viewAllPublicMemes(server){
     
 }
@@ -60,28 +86,3 @@ function searchMemeByName(server){
 function searchMemeByTag(server){
     
 }
-
-const memeModel = mongoose.model('posts', memeSchema)
-
-function createMeme(memeTitle, memeImageLink, memePoster, memeTags, callback){
-    var dt = dateTime.create()
-    var dtFormat = dt.format('m/d/Y')
-
-    const memeInstance = memeModel({
-        user: memePoster,
-        title: memeTitle,
-        image: memeImageLink,
-        comments: [],
-        tags: memeTags,
-        datePosted: dtFormat
-    })
-
-    memeInstance.save(function (err, res) {
-        if (err)  return console.error(err)
-        else {
-            callback()
-        }
-    })
-}
-
-module.exports.createMeme = createMeme
