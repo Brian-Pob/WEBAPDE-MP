@@ -4,6 +4,7 @@ const fs = require('fs');
 
 
 function memeModule(server){
+    
     server.post('/system-processing/uploadpost-result', function (req, resp) {
         var form = new formidable.IncomingForm()
         form.parse(req, function (err, fields, files){
@@ -12,11 +13,22 @@ function memeModule(server){
 
             fs.rename(oldpath, newpath, function(err){
                 console.log('file transfer start')
-                if (err) throw err
+                if (err) throw err;
                 //title, path, user, tags, function
-                memeModel.uploadMeme(fields.inputPostTitle, newpath, req.session.user, fields.tags, function(){
+                var title = fields.inputPostTitle
+                var postTags = fields.inputTags
+                postTags = postTags.replace(' ','')
+                var postTagsArr = postTags.split(',')
+                var user = req.session.user
+                console.log(title)
+                console.log(postTagsArr)
+                console.log(newpath)
+                console.log(req.session.user)
+
+                memeModel.uploadMeme(title, newpath, user, postTagsArr, function(){
                     resp.redirect('/')
                 })
+
             })
         })
         

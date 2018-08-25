@@ -27,6 +27,7 @@ const memeSchema = new mongoose.Schema({
 const memeModel = mongoose.model('posts', memeSchema)
 
 function uploadMeme(memeTitle, memeImageLink, memePoster, memeTags, callback){
+    console.log('upload meme entered')
     var dt = dateTime.create()
     var dtFormat = dt.format('m/d/Y')
 
@@ -38,9 +39,12 @@ function uploadMeme(memeTitle, memeImageLink, memePoster, memeTags, callback){
         tags: memeTags,
         datePosted: dtFormat
     })
+    console.log('meme instance created')
 
     memeInstance.save(function (err, inv) {
+        console.log('meme saved')
         if (err)  return console.error(err)
+
         callback()
     })
 }
