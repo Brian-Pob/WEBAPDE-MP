@@ -20,6 +20,10 @@ function memeModule(server){
             resp.render('/index')
         })
     })
+    
+    
 }
+
+
 
 module.exports.Activate = memeModule;

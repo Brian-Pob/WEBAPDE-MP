@@ -23,4 +23,42 @@ const memeSchema = new mongoose.Schema({
     }
 })
 
+function viewAllPublicMemes(server){
+    
+}
+
+function viewAllProfileMemes(server){
+    
+}
+
+//SEARCHING BY NAME AND TAG
+function viewMemesbySearchName(server){
+    
+}
+
+function viewMemesbySearchTag(server){
+    
+}
+
+function uploadMeme(server){
+    
+}
+
+function editMeme(server){
+    
+}
+
+function deleteMeme(server){
+    
+}
+
+//Should add auto complete
+function searchMemeByName(server){
+    
+}
+
+function searchMemeByTag(server){
+    
+}
+
 const memeModel = mongoose.model('posts', memeSchema)
