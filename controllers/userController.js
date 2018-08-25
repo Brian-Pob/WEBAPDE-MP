@@ -1,6 +1,6 @@
 const userModel = require('../models/userModel')
 const formidable = require('formidable')
-
+const crypto = require('crypto')
 function userModule(server) {
 
     server.get('/', function (req, resp) {
@@ -19,13 +19,17 @@ function userModule(server) {
         }
     })
 
-    server.post('/system-processing/signup-result', function (req, resp) {
+    server.post('/signup', function (req, resp) {
         
         var password = req.body.inputPasswordSignup
         var username = req.body.inputUsernameSignup
-
+        var data = {
+            username: username
+        }
         userModel.createUser(username, password, function(){
-            resp.redirect('/index')
+            resp.render('./index', {
+                data: data
+            })
         })
 
         
@@ -33,27 +37,20 @@ function userModule(server) {
 
     server.post('/login', function (req, resp) {
         var password = req.body.inputPasswordLogin
+        var username = req.body.inputUsernameLogin
 
-        const searchQuery = {
-            user: req.body.inputUsernameLogin,
-            pass: crypto.createHash('md5').update(password).digest('hex')
-        }
-
-        userModel.findOne(searchQuery, function (err, logindata) {
-            if (err) return console.error(err)
-            if (logindata !== undefined && logindata._id !== null) {
-                // resp.redirect('/?login=success')
-                req.session.user = logindata.user
-                console.log(req.session.user)
-
+        userModel.loginUser(username, password, function(result){
+            if(result){
+                data = {
+                    username: username
+                }
                 resp.render('./index', {
-                    data: logindata
+                    data: data
                 })
-            } else {
-                resp.redirect('/?login=failed')
             }
-
+                
         })
+        
     })
 
     server.get('/logout', function (req, resp) {

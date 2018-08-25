@@ -49,3 +49,32 @@ function createUser(usernameInput, passwordInput, callback) {
 
 }
 module.exports.createUser = createUser
+
+function loginUser(usernameInput, passwordInput, callback){
+    const searchQuery = {
+        user: usernameInput,
+        pass: crypto.createHash('md5').update(passwordInput).digest('hex')
+    }
+
+    userModel.findOne(searchQuery, function (err, logindata) {
+        if (err) return console.error(err)
+        // if (logindata !== undefined && logindata._id !== null) {
+        //     // resp.redirect('/?login=success')
+        //     // req.session.user = logindata.user
+        //     // console.log(req.session.user)
+
+        //     // resp.render('./index', {
+        //     //     data: logindata
+        //     // })
+        //     callback(logindata)
+        // } else {
+        //     // resp.redirect('/?login=failed')
+        //     data = {loggedin : false}
+        //     callback(data)
+        // }
+        callback(logindata !== undefined && logindata._id !== null)
+
+    })
+}
+
+module.exports.loginUser = loginUser
