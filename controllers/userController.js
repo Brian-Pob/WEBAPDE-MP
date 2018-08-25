@@ -4,18 +4,21 @@ const crypto = require('crypto')
 function userModule(server) {
 
     server.get('/', function (req, resp) {
+        console.log('went here')
         if (req.session.user === undefined) {
             resp.render('./index')
 
         } else {
-            var searchQuery = {
+            data = {
                 user: req.session.user
             }
-            userModel.findOne(searchQuery, function (req, user) {
-                resp.render('./index', {
-                    data: user
-                })
-            })
+            resp.render('./index', {data: data})
+            // userModel.findOne(searchQuery, function (req, user) {
+            //     resp.render('./index', {
+            //         data: user
+            //     })
+            // })
+            
         }
     })
 
@@ -41,10 +44,12 @@ function userModule(server) {
 
         userModel.loginUser(username, password, function(result){
             if(result){
-                data = {
+                var data = {
                     username: username
                 }
+                req.session.user = username
                 resp.render('./index', {
+                    
                     data: data
                 })
             }
@@ -55,12 +60,11 @@ function userModule(server) {
 
     server.get('/logout', function (req, resp) {
 
-        // var emptyData = {
-        //     _id: 'empty',
-        //     user: 'empty',
-        //     pass: 'empty'
-        // }
-        req.session.user = null
+        req.session.destroy()
+        var data = {
+            user: null
+        }
+        console.log('should be logged out')
         resp.render('./index')
     })
 

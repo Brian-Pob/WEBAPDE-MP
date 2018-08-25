@@ -33,34 +33,10 @@ server.use(session({
     })
 }))
 
-
-
-
-
 server.use(express.static(__dirname + '/public'));
 server.set('view engine', 'ejs')
 
-//USER
-// const userSchema = new mongoose.Schema({
-//     user: {
-//         type: String
-//     },
-//     pass: {
-//         type: String
-//     },
-//     datejoined: {
-//         type: String
-//     },
-//     profilePic: {
-//         type: String
-//     },
-//     posts: {
-//         type: [String]
-//     }
-// }, {
-//     versionKey: false
-// })
-// const userModel = mongoose.model('users', userSchema)
+
 const controllers = ['user', 'meme']
 for(var i = 0; i < controllers.length; i++){
     const mdl = require('./controllers/'+controllers[i]+'Controller')

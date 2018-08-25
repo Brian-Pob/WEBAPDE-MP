@@ -1,5 +1,5 @@
 const mongoose = require('./connectionBase').connection
-
+const dateTime = require('node-datetime')
 
 //MEME
 const memeSchema = new mongoose.Schema({
@@ -62,3 +62,26 @@ function searchMemeByTag(server){
 }
 
 const memeModel = mongoose.model('posts', memeSchema)
+
+function createMeme(memeTitle, memeImageLink, memePoster, memeTags, callback){
+    var dt = dateTime.create()
+    var dtFormat = dt.format('m/d/Y')
+
+    const memeInstance = memeModel({
+        user: memePoster,
+        title: memeTitle,
+        image: memeImageLink,
+        comments: [],
+        tags: memeTags,
+        datePosted: dtFormat
+    })
+
+    memeInstance.save(function (err, res) {
+        if (err)  return console.error(err)
+        else {
+            callback()
+        }
+    })
+}
+
+module.exports.createMeme = createMeme

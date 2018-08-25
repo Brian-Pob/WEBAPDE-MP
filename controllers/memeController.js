@@ -1,24 +1,31 @@
 const memeModel = require('../models/memeModel')
+const formidable = require('formidable'); 
+const fs = require('fs');
 
 function memeModule(server){
-    server.post('/createpost', function (req, resp) {
-        var dt = dateTime.create()
-        var dtFormat = dt.format('m/d/Y')
-        var tags = req.body.inputTags
+    server.post('/system-processing/createpost-result', function (req, resp) {
+        // var dt = dateTime.create()
+        // var dtFormat = dt.format('m/d/Y')
+        // var tags = req.body.inputTags
     
-        const postInstance = memeModel({
-            user: req.session.user,
-            title: req.body.inputPostTitle,
-            image: req.body.inputPostLink,
-            comments: [],
-            tags: tags.split(','),
-            datePosted: dtFormat
-        })
+        // const postInstance = memeModel({
+        //     user: req.session.user,
+        //     title: req.body.inputPostTitle,
+        //     image: req.body.inputPostLink,
+        //     comments: [],
+        //     tags: tags.split(','),
+        //     datePosted: dtFormat
+        // })
     
-        postInstance.save(function (err, res) {
-            if (err) return console.error(err)
-            resp.render('/index')
+        // postInstance.save(function (err, res) {
+        //     if (err) return console.error(err)
+        //     resp.render('/index')
+        // })
+        var form = new formidable.IncomingForm()
+        form.parse(req, function (err, fields, files){
+            
         })
+        memeModel.createMeme()
     })
     
     
