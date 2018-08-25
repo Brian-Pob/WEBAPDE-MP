@@ -26,7 +26,7 @@ const memeSchema = new mongoose.Schema({
 
 const memeModel = mongoose.model('posts', memeSchema)
 
-function createMeme(memeTitle, memeImageLink, memePoster, memeTags, callback){
+function uploadMeme(memeTitle, memeImageLink, memePoster, memeTags, callback){
     var dt = dateTime.create()
     var dtFormat = dt.format('m/d/Y')
 
@@ -39,50 +39,48 @@ function createMeme(memeTitle, memeImageLink, memePoster, memeTags, callback){
         datePosted: dtFormat
     })
 
-    memeInstance.save(function (err, res) {
+    memeInstance.save(function (err, inv) {
         if (err)  return console.error(err)
-        else {
-            callback()
-        }
+        callback()
     })
 }
 
-module.exports.createMeme = createMeme
+module.exports.uploadMeme = uploadMeme
 
-function viewAllPublicMemes(server){
+function viewAllPublicMemes(){
     
 }
 
-function viewAllProfileMemes(server){
+function viewAllProfileMemes(){
     
 }
 
 //SEARCHING BY NAME AND TAG
-function viewMemesbySearchName(server){
+function viewMemesbySearchName(){
     
 }
 
-function viewMemesbySearchTag(server){
+function viewMemesbySearchTag(){
     
 }
 
-function uploadMeme(server){
+function uploadMeme(){
     
 }
 
-function editMeme(server){
+function editMeme(){
     
 }
 
-function deleteMeme(server){
+function deleteMeme(){
     
 }
 
 //Should add auto complete
-function searchMemeByName(server){
+function searchMemeByName(){
     
 }
 
-function searchMemeByTag(server){
+function searchMemeByTag(){
     
 }

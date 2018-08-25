@@ -8,12 +8,12 @@
                     </h2>
                 </div>
                 <div class="card-body uploadingcontent">
-                    <form class="my-0 my-lg-0" action="/createpost" method="post">
+                    <form class="my-0 my-lg-0" action="/system-processing/uploadpost-result" method="post" enctype="multipart/form-data">
                         <div class="upload content">
                             <input class="form-control input-lg" type="text" placeholder="Meme Title" name="inputPostTitle" aria-label="Upload">
                             <br>
                             <!-- <input type="file" class="form-control-file border input input-lg" name="imgfile"> -->
-                            <input class="form-control input-lg" type="text" placeholder="Meme URL" name="inputPostLink" aria-label="Upload">
+                            <input class="form-control input-lg" type="file" placeholder="Meme URL" name="inputPostImage" aria-label="Upload">
                             <br>
                             <input class="form-control input-lg" type="text" placeholder="Meme Tags" name="inputTags" aria-label="Upload">
                             <br>
