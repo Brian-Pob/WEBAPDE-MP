@@ -8,3 +8,16 @@ function checkIfTag(){
     }
     return false;
 }
+
+function changeVisibility(){
+    console.log('Changed visibility')
+
+    if(document.getElementById('visibilitySetting').innerHTML === 'Public')
+        document.getElementById('visibilitySetting').innerHTML = 'Private'
+    else
+        document.getElementById('visibilitySetting').innerHTML = 'Public'
+    
+        return true
+}
+
+$(":file").filestyle();

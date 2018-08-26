@@ -8,12 +8,13 @@ const memeSchema = new mongoose.Schema({
     image: {type: String},//url of the image
     comments: {type: [String]},//array of comment IDs (ideally, but could just be array of comments)
     tags: {type: [String]},
-    datePosted: {type: String}//date the post was created
+    datePosted: {type: String},//date the post was created
+    memeVisibility: {type: Boolean}
 })
 
 const memeModel = mongoose.model('posts', memeSchema)
 
-function uploadMeme(memeTitle, memeImageLink, memePoster, memeTags, callback){
+function uploadMeme(memeTitle, memeImageLink, memePoster, memeTags, memeVisibility, callback){
     console.log('upload meme entered')
     var dt = dateTime.create()
     var dtFormat = dt.format('m/d/Y')
@@ -24,7 +25,8 @@ function uploadMeme(memeTitle, memeImageLink, memePoster, memeTags, callback){
         image: memeImageLink,
         comments: [],
         tags: memeTags,
-        datePosted: dtFormat
+        datePosted: dtFormat,
+        isPrivate: memeVisibility
     })
     console.log('meme instance created')
 
@@ -39,7 +41,8 @@ function uploadMeme(memeTitle, memeImageLink, memePoster, memeTags, callback){
 module.exports.uploadMeme = uploadMeme
 
 function viewAllPublicMemes(callback){
-    memeModel.find({}, function(err,list){
+    
+    memeModel.find({isPrivate: false}, function(err,list){
         if(err) return console.error(err);
         callback(list)
     })

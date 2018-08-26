@@ -73,7 +73,7 @@ function loginUser(usernameInput, passwordInput, callback){
         //     callback(data)
         // }
         callback(logindata !== undefined && logindata._id !== null)
-
+        // callback(logindata !== undefined)
     })
 }
 

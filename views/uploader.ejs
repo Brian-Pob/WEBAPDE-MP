@@ -13,10 +13,25 @@
                             <input class="form-control input-lg" type="text" placeholder="Meme Title" name="inputPostTitle" aria-label="Upload">
                             <br>
                             <!-- <input type="file" class="form-control-file border input input-lg" name="imgfile"> -->
-                            <input class="form-control input-lg" type="file" placeholder="Meme URL" name="inputPostImage" aria-label="Upload">
+                            <!-- <div class="custom-file">
+                                <input type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Choose File" name="inputPostImage">
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+
+                            </div> -->
+                            <!-- <br> -->
+                            <input class="form-control-file input-lg" type="file" placeholder="Upload Meme" name="inputPostImage" aria-label="Upload">
                             <br>
                             <input class="form-control input-lg" type="text" placeholder="Meme Tags" name="inputTags" aria-label="Upload">
                             <br>
+                            <span>Visibility: </span>
+                            <span id="visibilitySetting">Public</span>
+                            <br>
+                            <label class="switch">
+
+                                <input type="checkbox" name="inputVisibility" onclick="return changeVisibility()">
+                                <span class="slider round"></span>
+                            </label>
+
                             <div class="uploadbtn">
                                 <button class="btn btn-dark btn-lg my-2 my-sm-1" type="submit">Upload Meme</button>
                             </div>

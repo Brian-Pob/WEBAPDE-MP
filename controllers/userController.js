@@ -8,13 +8,10 @@ function userModule(server) {
         
         var password = req.body.inputPasswordSignup
         var username = req.body.inputUsernameSignup
-        var data = {
-            username: username
-        }
+        
         userModel.createUser(username, password, function(){
-            resp.render('./index', {
-                data: data
-            })
+            req.session.user = username
+            resp.redirect('/')
         })
 
         

@@ -20,12 +20,14 @@ function memeModule(server){
                 postTags = postTags.replace(' ','')
                 var postTagsArr = postTags.split(',')
                 var user = req.session.user
+                var memeVisibility = fields.inputVisibility
+                console.log(memeVisibility)
                 // console.log(title)
                 // console.log(postTagsArr)
                 // console.log(newpath)
                 // console.log(req.session.user)
 
-                memeModel.uploadMeme(title, files.inputPostImage.name, user, postTagsArr, function(){
+                memeModel.uploadMeme(title, files.inputPostImage.name, user, postTagsArr, memeVisibility, function(){
                     resp.redirect('/')
                 })
 
