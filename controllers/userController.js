@@ -42,12 +42,22 @@ function userModule(server) {
         var searchQuery = {
             user: req.session.user
         }
-        userModel.findOne(searchQuery, function (err, user) {
+        userModel.viewProfile(searchQuery, function (err, user) {
+        let id = req.query.id
+        userModel.findUserByID(id).then((profile)=>{
+            let user = req.session.user
+            if (user) {
+                res.render("profilepage.ejs", {user, profile})
+            } else {
+                res.render("profilepage.ejs", {profile})
+            }
+        })
+                
+            
             //get user posts
             //get user date joined
             //get user posts
         })
-        resp.render('./profilepage')
     })
 
     

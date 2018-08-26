@@ -78,3 +78,12 @@ function loginUser(usernameInput, passwordInput, callback){
 }
 
 module.exports.loginUser = loginUser
+
+function viewProfile(user, callback){
+
+
+
+
+}
+
+module.exports.viewProfile = viewProfile
