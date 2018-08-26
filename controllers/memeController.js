@@ -33,36 +33,12 @@ function memeModule(server){
         })
         
     })
-/*
-  server.post('/system-processing/addinvetory-result', function(req, resp){
-
-    var form = new formidable.IncomingForm();
-    form.parse(req, function (err, fields, files) {
-      var oldpath = files.image.path;
-      var newpath = __dirname + '/../public/upload/' + files.image.name;
-      fs.rename(oldpath, newpath, function (err) {
-        console.log('file transfer started');
-        if (err) throw err;
-        console.log('NUMBER: '+fields.price);
-        var num = Number(fields.price);
-        if(isNaN(num))
-          num = 500;
-        invetoryModel.addInvetory(fields.item, files.image.name, num ,function(){
-          resp.redirect('/home');
-        });//addInv
-
-      });//rename
-
-    });//parse
-
-  });//post
-
-
-*/
-    
     
     server.get('/viewPublicMemes', function (req, resp){
-        
+        memeModel.viewAllPublicMemes(function(list){
+            const data = { list:list};
+            resp.render('/pages/index', {data : data})
+        })
     })
 
     server.get('/viewProfileMemes', function (req, resp){

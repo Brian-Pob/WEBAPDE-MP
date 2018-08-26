@@ -3,26 +3,13 @@ const dateTime = require('node-datetime')
 
 //MEME
 const memeSchema = new mongoose.Schema({
-    user: {
-        type: String // name of the person
-    },
-    title: {
-        type: String
-    },
-    image: {
-        type: String //url of the image
-    },
-    comments: {
-        type: [String] //array of comment IDs (ideally, but could just be array of comments)
-    },
-    tags: {
-        type: [String]
-    },
-    datePosted: {
-        type: String //date the post was created
-    }
+    user: {type: String},// name of the person
+    title: {type: String},
+    image: {type: String},//url of the image
+    comments: {type: [String]},//array of comment IDs (ideally, but could just be array of comments)
+    tags: {type: [String]},
+    datePosted: {type: String}//date the post was created
 })
-
 
 const memeModel = mongoose.model('posts', memeSchema)
 
@@ -52,8 +39,13 @@ function uploadMeme(memeTitle, memeImageLink, memePoster, memeTags, callback){
 module.exports.uploadMeme = uploadMeme
 
 function viewAllPublicMemes(){
-    
+    memeModel.find({}, function(err,list){
+        if(err) return console.error(err);
+        callback(list)
+    })
 }
+
+module.exports.viewAllPublicMemes = viewAllPublicMemes
 
 function viewAllProfileMemes(){
     
