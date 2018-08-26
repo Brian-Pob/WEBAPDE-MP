@@ -13,13 +13,39 @@
                             <input class="form-control input-lg" type="text" placeholder="Meme Title" name="inputPostTitle" aria-label="Upload">
                             <br>
                             <!-- <input type="file" class="form-control-file border input input-lg" name="imgfile"> -->
-                            <!-- <div class="custom-file">
-                                <input type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Choose File" name="inputPostImage">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
+                            
+                            <div class="uploader" onclick="$('#filePhoto').click()" class="form-control-file input-lg" type="file" placeholder="Upload Meme" name="inputPostImage" aria-label="Upload">
+                                
+                                <p>click here or drag and drop your image!</p>
+                                <img src="" />
+                                <input type="file" id="filePhoto" />
+                            </div>
+                            
+                            <script>
+                                var imageLoader = document.getElementById('filePhoto');
+                                    imageLoader.addEventListener('change', handleImage, false);
 
-                            </div> -->
-                            <!-- <br> -->
-                            <input class="form-control-file input-lg" type="file" placeholder="Upload Meme" name="inputPostImage" aria-label="Upload">
+                                function handleImage(e) {
+                                    var reader = new FileReader();
+                                    reader.onload = function(event) {
+
+                                    $('.uploader img').attr('src', event.target.result);
+                                    }
+                                    reader.readAsDataURL(e.target.files[0]);
+                                }
+                            </script>
+                            <!-- OPTION NUMBER 2 : 
+                            <input type="file" accept="image/*" onchange="loadFile(event)" class="form-control-file input-lg" placeholder="Upload Meme" name="inputPostImage" aria-label="Upload">
+                            <br>
+                            <img id="output"/>
+                            <script>
+                                var loadFile = function(event) {
+                                var output = document.getElementById('output');
+                                output.src = URL.createObjectURL(event.target.files[0]);
+                                };
+                            </script>
+                            <br>
+                            <input class="form-control-file input-lg" type="file" placeholder="Upload Meme" name="inputPostImage" aria-label="Upload"> -->
                             <br>
                             <input class="form-control input-lg" type="text" placeholder="Meme Tags" name="inputTags" aria-label="Upload">
                             <br>
