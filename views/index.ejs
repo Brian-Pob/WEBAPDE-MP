@@ -16,7 +16,7 @@
 
 <body>
     <%  console.log(typeof data) %>
-    <%  if(typeof data === 'undefined'){%>
+    <%  if(typeof data.user === 'undefined'){%>
     <%- include navbar %>
     <%} else {%>
     <%- include loggedinnavbar %>
@@ -67,7 +67,9 @@
                         <h3>
                             <strong><%= data.list[i].title %></strong>
                         </h3>
-                        <span class="badge badge-primary"><%= data.list[i].tags %></span>
+                        <% for(var j = 0; j < data.list[i].tags.length; j++) {%>
+                        <span class="badge badge-primary"><%= data.list[i].tags[j] %></span>
+                        <% } %>
                         <p>
                             <small><%= data.list[i].datePosted %></small>
                         </p>
