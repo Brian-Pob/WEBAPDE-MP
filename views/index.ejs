@@ -57,7 +57,8 @@
         </div>
     </div>
     
-    <div class= "allposts"><% for(var i=0;i<data.list.length;i++){ %>
+    <div class= "allposts">
+        <% for(var i = 0; i < data.list.length; i++) { %>
         <div class="container img-post">
         <div class="row">
             <div class="col-lg-6 mx-auto">
@@ -75,7 +76,7 @@
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
                             <a data-toggle="modal" data-target="#wfModal">
-                                 <img src='./public/upload/<%= data.list[i].image %>'/>
+                                 <img src='./imgs/upload/<%= data.list[i].image %>'/>
                             </a>
                         </div>
                     </div>

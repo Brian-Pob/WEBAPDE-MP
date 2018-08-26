@@ -37,7 +37,7 @@ server.use(express.static(__dirname + '/public'));
 server.set('view engine', 'ejs')
 
 
-const controllers = ['user', 'meme']
+const controllers = ['user', 'meme', 'load']
 for(var i = 0; i < controllers.length; i++){
     const mdl = require('./controllers/'+controllers[i]+'Controller')
     mdl.Activate(server)

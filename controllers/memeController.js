@@ -12,7 +12,7 @@ function memeModule(server){
             var newpath = __dirname + '/../public/imgs/upload/' + files.inputPostImage.name
 
             fs.rename(oldpath, newpath, function(err){
-                console.log('file transfer start')
+                // console.log('file transfer start')
                 if (err) throw err;
                 //title, path, user, tags, function
                 var title = fields.inputPostTitle
@@ -20,12 +20,12 @@ function memeModule(server){
                 postTags = postTags.replace(' ','')
                 var postTagsArr = postTags.split(',')
                 var user = req.session.user
-                console.log(title)
-                console.log(postTagsArr)
-                console.log(newpath)
-                console.log(req.session.user)
+                // console.log(title)
+                // console.log(postTagsArr)
+                // console.log(newpath)
+                // console.log(req.session.user)
 
-                memeModel.uploadMeme(title, newpath, user, postTagsArr, function(){
+                memeModel.uploadMeme(title, files.inputPostImage.name, user, postTagsArr, function(){
                     resp.redirect('/')
                 })
 
@@ -37,7 +37,7 @@ function memeModule(server){
     server.get('/viewPublicMemes', function (req, resp){
         memeModel.viewAllPublicMemes(function(list){
             const data = { list:list};
-            resp.render('/pages/index', {data : data})
+            resp.render('/index', {data : data})
         })
     })
 

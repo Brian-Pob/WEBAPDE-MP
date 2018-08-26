@@ -38,7 +38,7 @@ function uploadMeme(memeTitle, memeImageLink, memePoster, memeTags, callback){
 
 module.exports.uploadMeme = uploadMeme
 
-function viewAllPublicMemes(){
+function viewAllPublicMemes(callback){
     memeModel.find({}, function(err,list){
         if(err) return console.error(err);
         callback(list)
