@@ -72,7 +72,10 @@ function loginUser(usernameInput, passwordInput, callback){
         //     data = {loggedin : false}
         //     callback(data)
         // }
-        callback(logindata !== undefined && logindata._id !== null)
+        // console.log('checking logindata: ')
+        // console.log(logindata != undefined)
+        // console.log(logindata !== undefined)
+        callback(logindata != undefined && logindata._id != null)
         // callback(logindata !== undefined)
     })
 }
