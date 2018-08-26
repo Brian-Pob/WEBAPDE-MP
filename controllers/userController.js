@@ -18,22 +18,12 @@ function userModule(server) {
     })
 
     server.get('/visitprofile', function (req, resp) {
-        var searchQuery = {
-            user: req.session.user
-        }
-        userModel.viewProfile(searchQuery, function (err, user) {
-        let id = req.query.id
-        userModel.findUserByID(id).then((profile)=>{
-            let user = req.session.user
-            if (user) {
-                res.render("profilepage.ejs", {user, profile})
-            }
-        })
-                
+        
+        var user = req.session.user
+        
+        userModel.searchForProfile(user, function (userData) {
             
-            //get user posts
-            //get user date joined
-            //get user posts
+            resp.render('./profilepage.ejs', {userData : userData})
         })
     })
 

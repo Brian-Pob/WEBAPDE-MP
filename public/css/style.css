@@ -52,3 +52,53 @@
 .commentBox{
     width: 300;     
 }
+
+#dropzone {
+    background: white;
+    border-radius: 5px;
+    border: 2px dashed rgb(0, 135, 247);
+    border-image: none;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.uploader {
+  background: white;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  border: 2px dashed rgb(0, 135, 247);
+  width: 500px;
+  height: 300px;
+}
+
+#filePhoto {
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  top: -50px;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.uploader img {
+  position: absolute;
+  width: 500px;
+  height: 352px;
+  top: -1px;
+  left: -1px;
+  z-index: 1;
+  border: none;
+}
+
+.uploader p {
+    margin: 0;
+    background: lightblue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) }
