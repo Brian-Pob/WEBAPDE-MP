@@ -82,11 +82,14 @@ function loginUser(usernameInput, passwordInput, callback){
 
 module.exports.loginUser = loginUser
 
-function viewProfile(user, callback){
+function searchForProfile(usernameInput, callback){
+    const searchQuery = {user : usernameInput}
 
-
-
-
+    userModel.findOne(searchQuery, function(err, user){
+        if (err) return console.error(err);
+        callback(user)
+    })
+    
 }
 
-module.exports.viewProfile = viewProfile
+module.exports.searchForProfile = searchForProfile
