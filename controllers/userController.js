@@ -30,8 +30,6 @@ function userModule(server) {
             let user = req.session.user
             if (user) {
                 res.render("profilepage.ejs", {user, profile})
-            } else {
-                res.render("profilepage.ejs", {profile})
             }
         })
                 
