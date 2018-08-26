@@ -3,24 +3,6 @@ const formidable = require('formidable')
 const crypto = require('crypto')
 function userModule(server) {
 
-    // server.get('/', function (req, resp) {
-    //     console.log('went here')
-    //     if (req.session.user === undefined) {
-    //         resp.render('./index')
-
-    //     } else {
-    //         data = {
-    //             user: req.session.user
-    //         }
-    //         resp.render('./index', {data: data})
-            // userModel.findOne(searchQuery, function (req, user) {
-            //     resp.render('./index', {
-            //         data: user
-            //     })
-            // })
-            
-    //     }
-    // })
 
     server.post('/signup', function (req, resp) {
         

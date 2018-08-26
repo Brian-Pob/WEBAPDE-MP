@@ -5,7 +5,7 @@ const formidable = require('formidable')
 function loadModule(server){
 
     server.get('/', function (req, resp) {
-        console.log('went here')
+        // console.log('went here')
         if (req.session.user === undefined) {
             memeModel.viewAllPublicMemes(function(list){
                 var data = {
@@ -16,21 +16,13 @@ function loadModule(server){
            
 
         } else {
-            var data
             memeModel.viewAllPublicMemes(function(list){
-                data = {
+                var data = {
                     user: req.session.user,
                     list: list
                 }
                 resp.render('./index', {data: data})
             })
-            
-            // userModel.findOne(searchQuery, function (req, user) {
-            //     resp.render('./index', {
-            //         data: user
-            //     })
-            // })
-            
         }
     })
 
@@ -40,14 +32,12 @@ function loadModule(server){
 
         userModel.loginUser(username, password, function(result){
             if(result){
-                var data = {
-                    username: username
-                }
+                
                 req.session.user = username
-                resp.render('./index', {
-                    
-                    data: data
-                })
+                resp.redirect('/')
+            }
+            else{
+                resp.redirect('/?login=failed')
             }
                 
         })
@@ -57,11 +47,12 @@ function loadModule(server){
     server.get('/logout', function (req, resp) {
 
         req.session.destroy()
-        var data = {
-            user: null
-        }
+        // var data = {
+        //     user: null,
+        //     list: req.data.list
+        // }
         console.log('should be logged out')
-        resp.render('./index')
+        resp.redirect('/')
     })
 
     
