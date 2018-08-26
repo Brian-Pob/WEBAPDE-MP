@@ -1,5 +1,6 @@
 const memeModel = require('../models/memeModel')
 const formidable = require('formidable');
+const bodyParser = require('body-parser')
 const fs = require('fs');
 
 
@@ -17,11 +18,16 @@ function memeModule(server){
                 //title, path, user, tags, function
                 var title = fields.inputPostTitle
                 var postTags = fields.inputTags
-                postTags = postTags.replace(' ','')
+                postTags = postTags.trim()
                 var postTagsArr = postTags.split(',')
                 var user = req.session.user
-                var memeVisibility = fields.inputVisibility
+                console.log('Test fields.inputVisibility:')
+                console.log(fields.inputVisibility === 'Private')
+                var memeVisibility = (fields.inputVisibility === 'Private')
+                console.log('Test memeVisibility:')
                 console.log(memeVisibility)
+
+
                 // console.log(title)
                 // console.log(postTagsArr)
                 // console.log(newpath)

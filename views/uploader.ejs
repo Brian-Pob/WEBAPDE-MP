@@ -19,19 +19,27 @@
 
                             </div> -->
                             <!-- <br> -->
+                            
                             <input class="form-control-file input-lg" type="file" placeholder="Upload Meme" name="inputPostImage" aria-label="Upload">
                             <br>
                             <input class="form-control input-lg" type="text" placeholder="Meme Tags" name="inputTags" aria-label="Upload">
                             <br>
-                            <span>Visibility: </span>
-                            <span id="visibilitySetting">Public</span>
-                            <br>
-                            <label class="switch">
+                            <!-- <input type="text"  name="inputVisibility"  value="false"> -->
+                            
+                            <!-- <label class="switch">
 
-                                <input type="checkbox" name="inputVisibility" onclick="return changeVisibility()">
+                                <input type="checkbox" id="inputVisibility" onclick="return changeVisibility()">
                                 <span class="slider round"></span>
-                            </label>
-
+                            </label> -->
+                            <div class="btn-group">
+                                    <input type="text"  id="inputVisibility" name="inputVisibility" readonly="true">
+                                    <!-- <label>Visibility Setting</label> -->
+                                    <button type="button" class="btn btn-outline-success" onclick="return changeVisibilityPrivate()">Private</button>
+                                    <button type="button" class="btn btn-outline-danger" onclick="return changeVisibilityPublic()">Public</button>
+                            </div>
+                            <div>
+                                
+                            </div>
                             <div class="uploadbtn">
                                 <button class="btn btn-dark btn-lg my-2 my-sm-1" type="submit">Upload Meme</button>
                             </div>

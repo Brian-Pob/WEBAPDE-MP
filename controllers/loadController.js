@@ -51,7 +51,7 @@ function loadModule(server){
         //     user: null,
         //     list: req.data.list
         // }
-        console.log('should be logged out')
+        // console.log('should be logged out')
         resp.redirect('/')
     })
 

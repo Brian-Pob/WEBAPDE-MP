@@ -9,13 +9,13 @@ const memeSchema = new mongoose.Schema({
     comments: {type: [String]},//array of comment IDs (ideally, but could just be array of comments)
     tags: {type: [String]},
     datePosted: {type: String},//date the post was created
-    memeVisibility: {type: Boolean}
+    isPrivate: {type: Boolean}
 })
 
 const memeModel = mongoose.model('posts', memeSchema)
 
 function uploadMeme(memeTitle, memeImageLink, memePoster, memeTags, memeVisibility, callback){
-    console.log('upload meme entered')
+    // console.log('upload meme entered')
     var dt = dateTime.create()
     var dtFormat = dt.format('m/d/Y')
 
@@ -28,10 +28,10 @@ function uploadMeme(memeTitle, memeImageLink, memePoster, memeTags, memeVisibili
         datePosted: dtFormat,
         isPrivate: memeVisibility
     })
-    console.log('meme instance created')
+    // console.log('meme instance created')
 
     memeInstance.save(function (err, inv) {
-        console.log('meme saved')
+        // console.log('meme saved')
         if (err)  return console.error(err)
 
         callback()
