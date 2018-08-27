@@ -4,13 +4,23 @@
     <title>MEMESUPREME.COM</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/toggleswitch.min.css">
+    <link rel="stylesheet" href="css/autocomplete.min.css">
     <link rel="stylesheet" href="framework/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="imgs/favicon.png">
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/bootstrap-filestyle.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <link rel="icon" href="imgs/favicon.png">
 </head>
 
@@ -26,16 +36,13 @@
                     </div>
                     <div class="profile username">
                         <h3>
-                            <small><%= userData.user %></small>
+                            <small style="color: white"><%= userData.user %></small>
                         </h3>
                     </div>
                     <div class="profile desciption">
-                        <p><%= userData.profileDesc %></p>
-                        <p>
-                            <%= userData.user %> joined <%= userData.datejoined %> 
-                        </p>
+                        <p style="color: white"><%= userData.profileDesc %></p>
+                        <p style="color: white"><%= userData.user %> joined <%= userData.datejoined %> </p>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -75,25 +82,12 @@
         </div>
     </div>
     <!-- End of Modal -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <hr>
+    <hr style="background: white">
     <div class="container overview">
         <div class="row">
             <div class="col-lg-7 mx-auto">
                 <br>
-                <h4><strong><%= userData.user %>'s Recent Posts</strong></h4>
+                <h4 style="color: white"><strong><%= userData.user %>'s Recent Posts</strong></h4>
                 <br>
             </div>
         </div>
