@@ -1,3 +1,8 @@
+body{
+    background-color: 1d1d1d;
+    margin-top: 75px;
+}
+
 .img-post {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -107,4 +112,34 @@
 
 #inputVisibility {
     cursor: default
+}
+
+.card-header, .card-footer {
+    background-color: whitesmoke;
+}
+
+.card-header h2 {
+    color: black;
+}
+
+div.card-body {
+    background-color: white;
+}
+
+.bg-dark {
+    background-color: 131212!important;
+}
+
+.navbar-brand {
+    padding: 0px;
+}
+.navbar-brand>img {
+    height: 50px;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.modal-backdrop {
+  z-index: -1;
 }
