@@ -140,6 +140,29 @@ div.card-body {
     padding: 0;
 }
 
+
 .modal-backdrop {
   z-index: -1;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.steadysizecontainer {
+   padding-right: 15px;
+   padding-left: 15px;
+   margin-right: auto;
+   margin-left: auto;
+   max-width: 420px;
+   overflow:hidden;
+   min-height:0px !important;
+}
+
+.steadysizepostcontainer {
+    padding-right: 15px;
+   padding-left: 15px;
+   margin-right: 100px;
+   margin-left: auto;
+    min-height:0px !important;
 }

@@ -27,14 +27,50 @@
     <%- include navbar %>
     <%} else {%>
     <%- include loggedinnavbar %>
-    <%- include uploader %>
     <%} %>
     
     <div class= "allposts">
-        <% for(var i = 0; i < data.list.length; i++) { %>
         <div class="container img-post">
         <div class="row">
-            <div class="col-lg-6 mx-auto">
+            <div class="fixed col-mx-4 mx-auto steadysizecontainer">
+                <div class="card ml-5">
+                    <div class="card-header">
+                        <h4 align =center><strong>Search</strong></h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="pb-2 mt-4 mb-2">
+                            <a data-toggle="modal" data-target="#wfModal" >
+                                <p align= center>
+                                <% for(var i = 0; i < data.list.length; i++) { %>
+                                 <% for(var j = 0; j < data.list[i].tags.length; j++) {%>
+                                <span style="font-size: 11pt;" class="badge badge-warning"><%= data.list[i].tags[j] %></span><% } %>
+                                <% } %>
+                                </p>
+                            </a>
+                            <br>
+                            <br>
+                            <form class="form-inline">
+                                <input class="form-control mr-sm-1" type="search" placeholder="Search by a tag!" aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                
+                                
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small>copyright @ hehe.com</small>
+
+                    </div>
+                
+                </div>
+            </div>
+            <div class="col-lg-6 steadysizepostcontainer">
+                <%  if(typeof data.user === 'undefined'){%>
+                <%} else {%>
+                <%- include uploader %>
+                <%} %>
+                <br>
+                <% for(var i = 0; i < data.list.length; i++) { %>
                 <div class="card">
                     <div class="card-header">
                         <h2 align =center><strong><%= data.list[i].title %></strong></h2>
@@ -58,13 +94,14 @@
                         <button class="btn btn-outline-primary  fa-2x fab fa-facebook-f"></button>
                         <button class="btn btn-outline-info fa-2x fab fa-twitter "></button>
                         <button class="btn btn-outline-secondary  fa-2x fas fa-comment-alt"></button>
-
                     </div>
                 </div>
+                <br>
+                <% } %>
             </div>
         </div>
         </div>
-         <% } %>
+
     </div>
     
     
