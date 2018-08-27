@@ -6,18 +6,42 @@ function loadModule(server){
 
     server.get('/', function (req, resp) {
         // console.log('went here')
+        
         if (req.session.user === undefined) {
-            memeModel.viewAllPublicMemes(function(list){
-                var data = {
-                    list: list
-                }
-                resp.render('./index', {data: data})
-            })
+            if(req.query.login !== undefined && req.query.login === 'failed'){
+            
+                memeModel.viewAllPublicMemes(function(list){
+                    var data = {
+                        list: list,
+                        signupfailed: false,
+                        loginfailed: true
+                    }
+                    resp.render('./index', {data: data})
+                })
+            }else if(req.query.signup !== undefined && req.query.signup === 'exists'){
+                memeModel.viewAllPublicMemes(function(list){
+                    var data = {
+                        list: list,
+                        signupfailed: true,
+                        loginfailed: false
+                    }
+                    resp.render('./index', {data: data})
+                })
+            }else{
+                memeModel.viewAllPublicMemes(function(list){
+                    var data = {
+                        list: list,
+                        signupfailed: false,
+                        loginfailed: false
+                    }
+                    resp.render('./index', {data: data})
+                })
+            }
            
 
         } else {
             var thisuser = req.session.user
-            memeModel.viewPublicAndMyMemes(thisuser, function(memeList){
+            memeModel.viewAvailableMemes(thisuser, function(memeList){
                 userModel.getUserList(function(userList){
                     var usernameList = []
                     for(var i=0; i<userList.length; i++){
@@ -26,7 +50,8 @@ function loadModule(server){
                     var data = {
                         user: req.session.user,
                         list: memeList,
-                        usernameList: usernameList
+                        usernameList: usernameList,
+                        loginfailed: false
                     }
                     resp.render('./index', {data: data})
                 })

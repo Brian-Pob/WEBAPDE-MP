@@ -74,20 +74,25 @@ function viewAllPublicMemes(callback){
 
 module.exports.viewAllPublicMemes = viewAllPublicMemes
 
-function viewPublicAndMyMemes (user, callback){
+function viewAvailableMemes (user, callback){
     const publicMemesQuery = {
         isPrivate: false
     }
     const myMemesQuery = {
         user: user
     }
-    memeModel.find({$or: [publicMemesQuery, myMemesQuery]}, function(err, list){
+    const sharedMemesQuery = {
+        sharedUser: user
+    }
+    memeModel.find({$or: [publicMemesQuery, myMemesQuery, sharedMemesQuery]}, function(err, list){
         if(err) return consoler.error(err);
         callback(list)
     })
 }
 
-module.exports.viewPublicAndMyMemes = viewPublicAndMyMemes
+module.exports.viewAvailableMemes = viewAvailableMemes
+
+
 function viewAllProfileMemes(){
     
 }

@@ -8,10 +8,15 @@ function userModule(server) {
         
         var password = req.body.inputPasswordSignup
         var username = req.body.inputUsernameSignup
-        
-        userModel.createUser(username, password, function(){
-            req.session.user = username
-            resp.redirect('/')
+        userModel.checkIfExists(username, function(userResult){
+            if(userResult == undefined){
+                userModel.createUser(username, password, function(){
+                    req.session.user = username
+                    resp.redirect('/')
+                })
+            }else{
+                resp.redirect('/?signup=exists')
+            }
         })
 
         
