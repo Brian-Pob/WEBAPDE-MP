@@ -177,3 +177,7 @@ div.card-body {
     width: 30%;
     margin: auto;
 }
+
+.btn-space {
+    margin-right: 5px;
+}
