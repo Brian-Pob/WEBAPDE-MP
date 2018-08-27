@@ -15,20 +15,25 @@
 </head>
 
 <body>
-
+    <%- include loggedinnavbar %>   
     
     <div class="container profile">
         <div class="row">
             <div class="col-lg-7 mx-auto">
                 <div class="profile info">
                     <div class="profile img">
-                        <img class="rounded-circle userpic" src="../imgs/profilepic.jpg">
+                        <img class="rounded-circle userpic" src="<%= userData.profilePic %>">
                     </div>
                     <div class="profile username">
-                        <h3>Deminishoki</h3>
+                        <h3>
+                            <small><%= userData.user %></small>
+                        </h3>
                     </div>
                     <div class="profile desciption">
-                        <p>I play lots of games. I own 14 cats</p>
+                        <p>I play lots of games. I own 14 cats hello</p>
+                        <p>
+                            <%= userData.user %> joined <%= userData.datejoined %> 
+                        </p>
                     </div>
                 </div>
             </div>
@@ -40,7 +45,7 @@
         <div class="row">
             <div class="col-lg-7 mx-auto">
                 <br>
-                <h4>Deminishoki's Recent Posts</h4>
+                <h4><strong><%= userData.user %>'s Recent Posts</strong></h4>
                 <br>
             </div>
         </div>

@@ -22,7 +22,6 @@ function userModule(server) {
         var user = req.session.user
         
         userModel.searchForProfile(user, function (userData) {
-            
             resp.render('./profilepage.ejs', {userData : userData})
         })
     })

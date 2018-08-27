@@ -82,8 +82,8 @@ function loginUser(usernameInput, passwordInput, callback){
 
 module.exports.loginUser = loginUser
 
-function searchForProfile(usernameInput, callback){
-    const searchQuery = {user : usernameInput}
+function searchForProfile(idUser, callback){
+    const searchQuery = {user : idUser}
 
     userModel.findOne(searchQuery, function(err, user){
         if (err) return console.error(err);
