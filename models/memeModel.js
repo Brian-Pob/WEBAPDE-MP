@@ -9,33 +9,55 @@ const memeSchema = new mongoose.Schema({
     comments: {type: [String]},//array of comment IDs (ideally, but could just be array of comments)
     tags: {type: [String]},
     datePosted: {type: String},//date the post was created
-    isPrivate: {type: Boolean}
+    isPrivate: {type: Boolean},
+    sharedUser: {type: String}
 })
 
 const memeModel = mongoose.model('posts', memeSchema)
 
-function uploadMeme(memeTitle, memeImageLink, memePoster, memeTags, memeVisibility, callback){
+function uploadMeme(memeTitle, memeImageLink, memePoster, memeTags, memeVisibility, sharedUser, callback){
     // console.log('upload meme entered')
     var dt = dateTime.create()
     var dtFormat = dt.format('m/d/Y')
-
-    const memeInstance = memeModel({
-        user: memePoster,
-        title: memeTitle,
-        image: memeImageLink,
-        comments: [],
-        tags: memeTags,
-        datePosted: dtFormat,
-        isPrivate: memeVisibility
-    })
+    if(sharedUser !== null){
+        console.log('Shared User')
+        const memeInstance = memeModel({
+            user: memePoster,
+            title: memeTitle,
+            image: memeImageLink,
+            comments: [],
+            tags: memeTags,
+            datePosted: dtFormat,
+            isPrivate: memeVisibility,
+            sharedUser: sharedUser
+        })
+        memeInstance.save(function (err, inv) {
+            // console.log('meme saved')
+            if (err)  return console.error(err)
+    
+            callback()
+        })
+    }else{
+        // console.log('No Shared User')
+        const memeInstance = memeModel({
+            user: memePoster,
+            title: memeTitle,
+            image: memeImageLink,
+            comments: [],
+            tags: memeTags,
+            datePosted: dtFormat,
+            isPrivate: memeVisibility
+        })
+        memeInstance.save(function (err, inv) {
+            // console.log('meme saved')
+            if (err)  return console.error(err)
+    
+            callback()
+        })
+    }
     // console.log('meme instance created')
 
-    memeInstance.save(function (err, inv) {
-        // console.log('meme saved')
-        if (err)  return console.error(err)
-
-        callback()
-    })
+    
 }
 
 module.exports.uploadMeme = uploadMeme

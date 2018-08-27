@@ -13,23 +13,24 @@
                             <input class="form-control input-lg" type="text" placeholder="Meme Title" name="inputPostTitle" aria-label="Upload">
                             <br>
                             <!-- <input type="file" class="form-control-file border input input-lg" name="imgfile"> -->
-                            
+
                             <div class="uploader" onclick="$('#filePhoto').click()">
-                                
+
                                 <p>click here or drag and drop your image!</p>
                                 <img src="" />
-                                <input type="file" id="filePhoto" class="form-control-file input-lg" placeholder="Upload Meme" name="inputPostImage" aria-label="Upload" />
+                                <input type="file" id="filePhoto" class="form-control-file input-lg" placeholder="Upload Meme" name="inputPostImage" aria-label="Upload"
+                                />
                             </div>
-                            
+
                             <script>
                                 var imageLoader = document.getElementById('filePhoto');
-                                    imageLoader.addEventListener('change', handleImage, false);
+                                imageLoader.addEventListener('change', handleImage, false);
 
                                 function handleImage(e) {
                                     var reader = new FileReader();
-                                    reader.onload = function(event) {
+                                    reader.onload = function (event) {
 
-                                    $('.uploader img').attr('src', event.target.result);
+                                        $('.uploader img').attr('src', event.target.result);
                                     }
                                     reader.readAsDataURL(e.target.files[0]);
                                 }
@@ -47,24 +48,23 @@
                             <br>
                             <input class="form-control-file input-lg" type="file" placeholder="Upload Meme" name="inputPostImage" aria-label="Upload"> -->
                             <br>
-                            <input class="form-control input-lg" type="text" placeholder="Meme Tags" name="inputTags" aria-label="Upload">
+                            <input class="form-control input-lg" type="text" placeholder="Meme Tags, Separated by, Comma" name="inputTags" aria-label="Upload">
                             <br>
-                            <!-- <input type="text"  name="inputVisibility"  value="false"> -->
-                            
-                            <!-- <label class="switch">
-
-                                <input type="checkbox" id="inputVisibility" onclick="return changeVisibility()">
-                                <span class="slider round"></span>
-                            </label> -->
+                           
                             <div class="btn-group">
-                                    <input type="text"  id="inputVisibility" name="inputVisibility" readonly="true">
-                                    <!-- <label>Visibility Setting</label> -->
-                                    <button type="button" class="btn btn-outline-success" onclick="return changeVisibilityPrivate()">Private</button>
-                                    <button type="button" class="btn btn-outline-danger" onclick="return changeVisibilityPublic()">Public</button>
-                            </div>
-                            <div>
+                                <input class="form-control input-lg" type="text" id="inputVisibility" name="inputVisibility" readonly="true" placeholder="Public">
                                 
+                                <button type="button" class="btn btn-primary" onclick="return changeVisibilityPrivate()">Private</button>
+                                <button type="button" class="btn btn-secondary" onclick="return changeVisibilityPublic()">Public</button>
                             </div>
+                            <br>
+                            <br>
+                            <!-- AUTOCOMPLETE GOES HERE -->
+                            <div id="sharedUserDiv" style="display: none;">
+                                <input class="form-control input-lg" id="inputSharedUser" type="text"  placeholder="Shared User" name="inputSharedUser" aria-label="Upload" >
+
+                            </div>
+
                             <div class="uploadbtn">
                                 <button class="btn btn-dark btn-lg my-2 my-sm-1" type="submit">Upload Meme</button>
                             </div>
