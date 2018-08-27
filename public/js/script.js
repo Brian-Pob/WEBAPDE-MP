@@ -1,23 +1,37 @@
 var tags = ['ded', 'dunny', 'gaming', 'technology'];
-function checkIfTag(){
-    
-    if(!tags.includes(document.getElementById('searchbar').value.toLowerCase())){
+
+function checkIfTag() {
+
+    if (!tags.includes(document.getElementById('searchbar').value.toLowerCase())) {
         alert("This is not a tag");
-    }else{
+    } else {
         alert("This is a tag");
     }
     return false;
 }
 
-function changeVisibility(){
-    console.log('Changed visibility')
+function changeVisibilityPrivate() {
+    // console.log('Changed visibility')
 
-    if(document.getElementById('visibilitySetting').innerHTML === 'Public')
-        document.getElementById('visibilitySetting').innerHTML = 'Private'
-    else
-        document.getElementById('visibilitySetting').innerHTML = 'Public'
-    
-        return true
+    document.getElementById('inputVisibility').value = 'Private'
+    document.getElementById('btnPublic').setAttribute('class', 'btn btn-secondary')
+    document.getElementById('btnPrivate').setAttribute('class', 'btn btn-primary')
+    // document.getElementById('sharedUserDiv').style.visibility = visible
+    $('#sharedUserDiv').show()
+    return false
 }
 
-$(":file").filestyle();
+function changeVisibilityPublic() {
+    // console.log('Changed visibility')
+
+    document.getElementById('inputVisibility').value = 'Public'
+    // document.getElementById('sharedUserDiv').style.visibility = hidden
+    // document.getElementById('inputSharedUser').value = ''
+    document.getElementById('btnPrivate').setAttribute('class', 'btn btn-secondary')
+    document.getElementById('btnPublic').setAttribute('class', 'btn btn-primary')
+    $('#inputSharedUser').val('')
+    $('#sharedUserDiv').hide()
+    // document.getElementById('inputVisibility'). = 'Public'
+    return false
+}
+
