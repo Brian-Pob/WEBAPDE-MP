@@ -17,7 +17,7 @@ function loadModule(server){
 
         } else {
             var thisuser = req.session.user
-            memeModel.viewPublicAndMyMemes(thisuser, function(memeList){
+            memeModel.viewAvailableMemes(thisuser, function(memeList){
                 userModel.getUserList(function(userList){
                     var usernameList = []
                     for(var i=0; i<userList.length; i++){

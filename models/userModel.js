@@ -106,3 +106,14 @@ function getUserList(callback){
 }
 
 module.exports.getUserList = getUserList
+
+function checkIfExists(user, callback){
+    const searchQuery = {
+        user: user
+    }
+    userModel.findOne(searchQuery, function(err, userResult){
+        if (err) return console.error(err);
+        callback(userResult)
+    })
+}
+module.exports.checkIfExists = checkIfExists
