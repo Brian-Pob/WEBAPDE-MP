@@ -181,3 +181,16 @@ div.card-body {
 .btn-space {
     margin-right: 5px;
 }
+
+.card.verrynaice {
+    width: 550px;
+    height: auto;
+}
+
+.modal-lg {
+    max-width: 50% !important;
+}
+
+.modal-content {
+    width: 590px! important;
+}
