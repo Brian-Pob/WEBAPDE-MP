@@ -63,8 +63,10 @@ function uploadMeme(memeTitle, memeImageLink, memePoster, memeTags, memeVisibili
 module.exports.uploadMeme = uploadMeme
 
 function viewAllPublicMemes(callback){
-    
-    memeModel.find( function(err,list){
+    const searchQuery = {
+        isPrivate: false
+    }
+    memeModel.find(searchQuery, function(err,list){
         if(err) return console.error(err);
         callback(list)
     })
@@ -72,6 +74,20 @@ function viewAllPublicMemes(callback){
 
 module.exports.viewAllPublicMemes = viewAllPublicMemes
 
+function viewPublicAndMyMemes (user, callback){
+    const publicMemesQuery = {
+        isPrivate: false
+    }
+    const myMemesQuery = {
+        user: user
+    }
+    memeModel.find({$or: [publicMemesQuery, myMemesQuery]}, function(err, list){
+        if(err) return consoler.error(err);
+        callback(list)
+    })
+}
+
+module.exports.viewPublicAndMyMemes = viewPublicAndMyMemes
 function viewAllProfileMemes(){
     
 }
