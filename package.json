@@ -31,5 +31,6 @@
   "homepage": "https://github.com/Brian-Pob/WEBAPDE-MP#readme",
   "engines": {
     "node": "8.11.3"
-  }
+  },
+  "start": "node index.js"
 }
