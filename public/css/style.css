@@ -166,3 +166,14 @@ div.card-body {
    margin-left: auto;
     min-height:0px !important;
 }
+
+.hide-prompt {
+    display: none;
+    
+}
+
+.failed-prompt {
+    text-align: center;
+    width: 30%;
+    margin: auto;
+}

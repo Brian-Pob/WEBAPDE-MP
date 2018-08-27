@@ -1,3 +1,18 @@
+<% 
+    var loginFailedClass
+    if(data.loginfailed){
+        loginFailedClass = 'alert alert-danger failed-prompt'
+    }else{
+        loginFailedClass = 'hide-prompt alert alert-danger failed-prompt'
+    }
+
+    var signupFailedClass
+    if(data.signupfailed){
+        signupFailedClass = 'alert alert-danger failed-prompt'
+    }else{
+        signupFailedClass = 'hide-prompt alert alert-danger failed-prompt'
+    }
+%>
 <html>
 
 <head>
@@ -30,7 +45,12 @@
     <%} else {%>
     <%- include loggedinnavbar %>
     <%} %>
-    
+
+    <!-- PROMPT IF LOGIN FAILED -->
+    <div class='<%= loginFailedClass %>'>Login Failed. Check username or password.</div>
+    <!-- PROMPT IF SIGNUP FAILED -->
+    <div class='<%= signupFailedClass %>'>SignUp failed. User already exists.</div>
+
     <div class= "allposts">
         <div class="container img-post">
         <div class="row">
