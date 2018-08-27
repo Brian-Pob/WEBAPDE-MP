@@ -11,7 +11,6 @@ server.use(bodyParser.urlencoded({
     extended: true
 }))
 server.use(bodyParser.json())
-
 // const crypto = require('crypto')
 
 const session = require('express-session')

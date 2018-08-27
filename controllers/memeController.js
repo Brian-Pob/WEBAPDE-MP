@@ -15,14 +15,25 @@ function memeModule(server) {
                     fs.rename(oldpath, newpath, function (err) {
                         if (err) throw err;
                         var title = fields.inputPostTitle
+
                         var postTags = fields.inputTags
-                        postTags = postTags.trim()
+
                         var postTagsArr = postTags.split(',')
+
+                        var trimmedTags = []
+
+                        for(var i = 0; i < postTagsArr.length; i++){
+                            var tagString = postTagsArr[i]
+                            // console.log(typeof tagString)
+                            // console.log(tagString.trim())
+                            trimmedTags.push(tagString.trim())
+                        }
+                        // console.log(trimmedTags)
                         var user = req.session.user
                         var memeVisibility = (fields.inputVisibility === 'Private')
                         var sharedUser = fields.inputSharedUser
                         if (sharedUser !== ''){
-                            memeModel.uploadMeme(title, files.inputPostImage.name, user, postTagsArr, memeVisibility, sharedUser, function () {
+                            memeModel.uploadMeme(title, files.inputPostImage.name, user, trimmedTags, memeVisibility, sharedUser, function () {
                                 resp.redirect('/')
                             })   
                         }
