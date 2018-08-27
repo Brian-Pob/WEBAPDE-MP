@@ -115,7 +115,7 @@ module.exports.viewMemesbySearchTag = viewMemesbySearchTag;
     
 
 
-// function viewAllProfileMemes(){
+function viewAllProfileMemes(){
     
 // }
 
