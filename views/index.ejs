@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/toggleswitch.min.css">
+    <link rel="stylesheet" href="css/autocomplete.min.css">
     <link rel="stylesheet" href="framework/fontawesome-free/css/all.css">
     <link rel="icon" href="imgs/favicon.png">
     <script src="js/bootstrap.min.js"></script>
@@ -14,12 +15,14 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/bootstrap-filestyle.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
 </head>
 
 <body>
-    <%  if(typeof data.usernameList !== 'undefined') {console.log(data.usernameList)}%>
+    
     <%  if(typeof data.user === 'undefined'){%>
     <%- include navbar %>
     <%} else {%>
@@ -97,59 +100,7 @@
                 </div>
             </div>
         </div>
-
-    <!-- Start of Modal -->
-    <div class="modal fade" id="wfModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <div class="card">
-                        <h3>
-                            <strong><%= data.list[i].title %></strong>
-                            <!-- Post title -->
-                        </h3>
-                        <% for(var j = 0; j < data.list[i].tags.length; j++) {%>
-                        <span class="badge badge-primary"><%= data.list[i].tags[j] %></span>
-                        <%} %>
-                        <!-- post tags -->
-                        <p>
-                            <small><%= data.list[i].datePosted %></small>
-                            <!-- Points and comment count -->
-                        </p>
-                        <div class="card-body">
-                            <div class="pb-2 mt-4 mb-2 ">
-                                <a href="#wfModal">
-                                    <img src='./imgs/upload/<%= data.list[i].image %>'/>
-                                    <!-- Post source -->
-                                </a>
-                            </div>
-
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-outline-success fa-2x fas fa-arrow-up"></button>
-                            <button class="btn btn-outline-danger fa-2x fas fa-arrow-down"></button>
-                            <button class="btn btn-outline-primary  fa-2x fab fa-facebook-f"></button>
-                            <button class="btn btn-outline-info fa-2x fab fa-twitter "></button>
-                            <button class="btn btn-outline-secondary  fa-2x fas fa-comment-alt"></button>
-                            <div>
-                                <label>
-                                    <b>Anonymous: </b>This game is amazing!</label>
-                            </div>
-                            <div>
-                                <input type="text" class="commentBox" placeholder="Add a comment...">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-    </div>
-            
-            
-        </div>
-        
-        
     <% } %></div>
     
     
@@ -168,8 +119,9 @@
     </div>
     <br>
     <hr class="rgba-white-light" style="margin: 0 15%;">
-    
+ 
     <%- include footer %>
+
 </body>
 
 </html>

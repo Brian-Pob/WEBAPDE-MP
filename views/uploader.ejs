@@ -64,7 +64,6 @@
                             <!-- AUTOCOMPLETE GOES HERE -->
                             <div id="sharedUserDiv" style="display: none;" class="autocomplete">
                                 <input class="form-control input-lg" id="inputSharedUser" type="text"  placeholder="Shared User" name="inputSharedUser" aria-label="Upload" >
-
                             </div>
 
                             <div class="uploadbtn">
@@ -76,4 +75,14 @@
             </div>
         </div>
     </div>
+    <script>
+            $( function() {
+                var unames = '<%= data.usernameList %>'
+                var unameList = unames.split(',')
+                console.log(unameList)
+                $( "#inputSharedUser" ).autocomplete({
+                  source: unameList
+                });
+              } );
+            </script>
 </div>
