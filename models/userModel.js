@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema({
 const userModel = mongoose.model('users', userSchema)
 
 //functions
-function createUser(usernameInput, passwordInput, callback) {
+function createUser(usernameInput, passwordInput, descriptionInput, picInput, callback) {
 
     var dt = dateTime.create();
     var dtFormat = dt.format('m/d/Y')
@@ -37,8 +37,8 @@ function createUser(usernameInput, passwordInput, callback) {
         user: usernameInput,
         pass: crypto.createHash('md5').update(passwordInput).digest('hex'),
         datejoined: dtFormat,
-        profilePic: 'imgs/blank-profile.jpg',
-        profileDesc: "Hello, I like memes!",
+        profilePic: picInput,
+        profileDesc: descriptionInput,
         posts: []
     })
 
@@ -107,31 +107,33 @@ function getUserList(callback){
 
 module.exports.getUserList = getUserList
 
-function editProfileDesc(idUser, editFile, callback){
-    const searchQuery = {user : idUser}
+// // function editProfileDesc(idUser, editFile, callback){
+// //     const searchQuery = {user : idUser}
 
-    userModel.findOneAndUpdate(user.profileDesc, editFile, function(err, user){
-        if (err) return console.error(err);
-        callback(user)
-    })
-    
+// //     var oldDesc = { profileDesc: searchQuery.profileDesc}
+// //     var newDesc = { $set: {profileDesc : editFile} }
 
-}
+// //     userModel.update(oldDesc, newDesc, function(err, prof){
+// //         if (err) return console.error(err);
+// //         callback(prof != null)
+// //     })
+// // }
 
-module.exports.editProfileDesc = editProfileDesc
+// // module.exports.editProfileDesc = editProfileDesc
 
-function editProfilePic(idUser, editFile, callback){
-    const searchQuery = {user : idUser}
+// // function editProfilePic(idUser, editFile, callback){
+// //     const searchQuery = {user : idUser}
 
-    userModel.findOneAndUpdate(user.profilePic, editFile, function(err, user){
-        if (err) return console.error(err);
-        callback(user)
-    })
-    
+// //     var oldPic = { profilePic: searchQuery.profilePic}
+// //     var newPic = { $set: {profilePic : editFile} }
 
-}
+// //     userModel.update(oldPic, newPic, function(err, prof){
+// //         if (err) return console.error(err);
+// //         callback(prof != null)
+// //     })
+// // }
 
-module.exports.editProfilePic = editProfilePic
+// module.exports.editProfilePic = editProfilePic
 
 
 

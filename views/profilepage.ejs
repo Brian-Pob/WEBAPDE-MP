@@ -48,57 +48,7 @@
         </div>
     </div>
 
-    <!-- EDIT -->
-    <button class="btn btn-primary" id="edit" data-toggle="modal" data-target="#editModal" style="margin-left: 625">Edit Profile</button>
-    
-    <!-- The Modal -->
-    <div class="modal fade" id="editModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Edit</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <form class="form-edit" action="/edit" method="POST">
-
-                        <h1 class="h3 mb-3 font-weight-normal">Edit your profile here!
-                        </h1>
-                    <!-- Changing Profile Pic start -->
-                    <label>Change your profile picture:</label>
-                <input class="form-control-file input-lg" type="file" placeholder="Upload Profile Picture" id="inputProfileImage" aria-label="Upload">
-                    <!-- Changing Profile Pic start -->
-
-                    <!-- Changing Description start -->
-                    <label>Change your description:</label>
-                        <label for="inputDescription" class="sr-only">Description</label>
-                        <input type="description" id="inputDescription" name="inputDescription" class="form-control" placeholder="<%= userData.profileDesc%>">
-                        <br>
-                        <label></label>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Finish!</button>
-                    <!-- Changing Description end -->
-                        <p class="mt-5 mb-3 text-muted">&copy; 2018</p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End of Modal -->
-    <hr style="background: white">
-    <div class="container overview">
-        <div class="row">
-            <div class="col-lg-7 mx-auto">
-                <br>
-                <h4 style="color: white"><strong><%= userData.user %>'s Recent Posts</strong></h4>
-                <br>
-            </div>
-        </div>
-    </div>
-    <!-- This is the profile's posts-->
+    <!-- This is the profile's posts -->
 
     <div class="container img-post">
         <div class="row">
