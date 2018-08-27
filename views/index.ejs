@@ -19,6 +19,8 @@
     
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 </head>
 
 <body>
@@ -33,11 +35,14 @@
         <div class="container img-post">
         <div class="row">
             <div class="fixed col-mx-4 mx-auto steadysizecontainer">
+                <br>
+                <br>
                 <div class="card ml-5">
                     <div class="card-header">
-                        <h4 align =center><strong>Search</strong></h4>
+                        <h4 align =center><strong>PICK YOUR POISON</strong></h4>
                     </div>
                     <div class="card-body">
+                        <i>Available categories to choose from</i>
                         <div class="pb-2 mt-4 mb-2">
                             <a data-toggle="modal" data-target="#wfModal" >
                                 <p align= center>
@@ -47,14 +52,28 @@
                                 <% } %>
                                 </p>
                             </a>
+                            
+                            <select multiple id="e1" style="width:300px">
+                                <% for(var i = 0; i < data.list.length; i++) { %>
+                                    <% for(var j = 0; j < data.list[i].tags.length; j++) {%>
+                                        <option value="<%= data.list[i].tags[j] %>"><%= data.list[i].tags[j] %></option>
+                                    <% } %>
+                                <% } %>
+                            </select>
+                            
+                            <script>
+                            $(document).ready(function() { 
+                                $("#e1").select2();
+                            });    
+                                
+                            </script>
+                            
                             <br>
                             <br>
-                            <form class="form-inline">
-                                <input class="form-control mr-sm-1" type="search" placeholder="Search by a tag!" aria-label="Search">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                                
-                                
+                            <form class="form-inline" >
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="text-align: center;">Search</button>
                             </form>
+                                
                         </div>
                     </div>
                     <div class="card-footer">
