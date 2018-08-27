@@ -1,4 +1,3 @@
-commentController:
 
 const commentModel = require('../models/commentModel')
 const memeModel = require('../models/memeModel')
