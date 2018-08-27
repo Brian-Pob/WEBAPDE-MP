@@ -15,6 +15,9 @@ const userSchema = new mongoose.Schema({
     profilePic: {
         type: String
     },
+    profileDesc: {
+        type: String
+    },
     posts: {
         type: [String]
     }
@@ -35,6 +38,7 @@ function createUser(usernameInput, passwordInput, callback) {
         pass: crypto.createHash('md5').update(passwordInput).digest('hex'),
         datejoined: dtFormat,
         profilePic: 'imgs/blank-profile.jpg',
+        profileDesc: "Hello, I like memes!",
         posts: []
     })
 

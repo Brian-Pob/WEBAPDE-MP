@@ -30,15 +30,63 @@
                         </h3>
                     </div>
                     <div class="profile desciption">
-                        <p>I play lots of games. I own 14 cats hello</p>
+                        <p><%= userData.profileDesc %></p>
                         <p>
                             <%= userData.user %> joined <%= userData.datejoined %> 
                         </p>
                     </div>
+                    
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- EDIT -->
+    <button class="btn btn-primary" id="edit" data-toggle="modal" data-target="#editModal" style="margin-left: 625">Edit Profile</button>
+    
+    <!-- The Modal -->
+    <div class="modal fade" id="editModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form class="form-edit" action="/signup" method="POST">
+
+                        <h1 class="h3 mb-3 font-weight-normal">Edit your profile here!
+                        </h1>
+                        <label for="inputUsernameSignup" class="sr-only">Username</label>
+                        <input type="username" id="inputDescription" name="inputDescription" class="form-control" placeholder="<%= userData.profileDesc%>" required>
+                        <br>
+                        
+                        
+                        <label></label>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Finish!</button>
+                        <p class="mt-5 mb-3 text-muted">&copy; 2018</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Modal -->
+
+
+
+
+
+
+
+
+
+
+
+
 
     <hr>
     <div class="container overview">
