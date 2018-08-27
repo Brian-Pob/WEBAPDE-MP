@@ -7,18 +7,19 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/toggleswitch.min.css">
-    <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="framework/fontawesome-free/css/all.css">
+    <link rel="icon" href="imgs/favicon.png">
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/bootstrap-filestyle.min.js"></script>
-    <link rel="icon" href="imgs/favicon.png">
+    
 
 </head>
 
 <body>
-    
+    <%  if(typeof data.usernameList !== 'undefined') {console.log(data.usernameList)}%>
     <%  if(typeof data.user === 'undefined'){%>
     <%- include navbar %>
     <%} else {%>
@@ -115,7 +116,7 @@
     </div>
     <br>
     <hr class="rgba-white-light" style="margin: 0 15%;">
-
+    
     <%- include footer %>
 </body>
 

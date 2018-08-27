@@ -16,12 +16,19 @@ function loadModule(server){
            
 
         } else {
-            memeModel.viewAllPublicMemes(function(list){
-                var data = {
-                    user: req.session.user,
-                    list: list
-                }
-                resp.render('./index', {data: data})
+            memeModel.viewAllPublicMemes(function(memeList){
+                userModel.getUserList(function(userList){
+                    var usernameList = []
+                    for(var i=0; i<userList.length; i++){
+                        usernameList.push(userList[i].user)
+                    }
+                    var data = {
+                        user: req.session.user,
+                        list: memeList,
+                        usernameList: usernameList
+                    }
+                    resp.render('./index', {data: data})
+                })
             })
         }
     })

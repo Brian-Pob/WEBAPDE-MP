@@ -8,13 +8,14 @@
                     </h2>
                 </div>
                 <div class="card-body uploadingcontent">
-                    <form class="my-0 my-lg-0" action="/system-processing/uploadpost-result" method="post" enctype="multipart/form-data">
+                    <form id="uploadMemeForm" class="my-0 my-lg-0" autocomplete="off" action="/system-processing/uploadpost-result" method="post" enctype="multipart/form-data" >
                         <div class="upload content">
                             <input class="form-control input-lg" type="text" placeholder="Meme Title" name="inputPostTitle" aria-label="Upload">
                             <br>
                             <!-- <input type="file" class="form-control-file border input input-lg" name="imgfile"> -->
 
                             <div class="uploader" onclick="$('#filePhoto').click()">
+                                
 
                                 <p>click here or drag and drop your image!</p>
                                 <img src="" />
@@ -59,8 +60,9 @@
                             </div>
                             <br>
                             <br>
+                            
                             <!-- AUTOCOMPLETE GOES HERE -->
-                            <div id="sharedUserDiv" style="display: none;">
+                            <div id="sharedUserDiv" style="display: none;" class="autocomplete">
                                 <input class="form-control input-lg" id="inputSharedUser" type="text"  placeholder="Shared User" name="inputSharedUser" aria-label="Upload" >
 
                             </div>

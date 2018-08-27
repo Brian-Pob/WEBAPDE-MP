@@ -93,3 +93,12 @@ function searchForProfile(usernameInput, callback){
 }
 
 module.exports.searchForProfile = searchForProfile
+
+function getUserList(callback){
+    userModel.find({}, function(err, userList){
+        if (err) return console.error(err);
+        callback(userList)
+    })
+}
+
+module.exports.getUserList = getUserList
