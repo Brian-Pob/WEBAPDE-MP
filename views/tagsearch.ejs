@@ -27,7 +27,7 @@
                     <p align= center>
                         <% for(var i = 0; i <uniqueTags.length; i++) { %>
                             
-                                <span style="font-size: 11pt;" class="badge badge-warning"><%= uniqueTags[i] %></span>
+                                <a style="font-size: 11pt;" class="btn btn-warning btn-sm" href="/viewMemeSearchByTag?tag=<%= uniqueTags[i] %>"><%= uniqueTags[i] %></a>
 
                         <% } %>
                     </p>
@@ -42,13 +42,13 @@
                     
                 <script>
                     $(document).ready(function() { 
-                        $("#e1").select2();
+                        console.log($("#e1").select2());
                     });    
                         
                 </script>
                 
                 <br><br>
-                <form class="form-inline" >
+                <form class="form-inline" action="/viewMemeSearchByTag">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="text-align: center;">Search</button>
                 </form>
                         

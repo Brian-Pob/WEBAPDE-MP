@@ -68,7 +68,14 @@ function memeModule(server) {
         })
 
         server.get('/viewMemeSearchByTag', function (req, resp) {
-
+            var tag = req.query.tag
+            var user = req.session.user
+            memeModel.viewMemesbySearchTag(user, tag, function(postList){
+                const data = {
+                    list: postList
+                }
+                resp.render('./index', {data: data})
+            })
         })
 
         server.get('/uploadMeme', function (req, resp) {

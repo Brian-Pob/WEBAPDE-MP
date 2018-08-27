@@ -122,7 +122,7 @@ function viewAvailableMemes(user, callback) {
 
 module.exports.viewAvailableMemes = viewAvailableMemes
 
-function viewMemesbySearchTag(user, tag, callback) {
+function viewMemesbySearchTag(user, tags, callback) {
     const publicMemesQuery = {
         isPrivate: false
     }
@@ -133,7 +133,7 @@ function viewMemesbySearchTag(user, tag, callback) {
         sharedUser: user
     }
     const tagMemesQuery = {
-        tags: tag
+        tags: tags
     }
     memeModel.find({
         $and: [tagMemesQuery, {
