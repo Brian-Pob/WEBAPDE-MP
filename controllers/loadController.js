@@ -88,7 +88,9 @@ function loadModule(server){
         resp.redirect('/')
     })
 
-    
+    server.get('/visitabout', function (req, resp) {
+            resp.redirect('./about.ejs')
+    })
 }
 
 module.exports.Activate = loadModule

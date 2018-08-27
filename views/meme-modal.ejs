@@ -27,15 +27,56 @@
                             <button class="btn btn-outline-primary  fa-2x fab fa-facebook-f"></button>
                             <button class="btn btn-outline-info fa-2x fab fa-twitter "></button>
                             <button class="btn btn-outline-secondary  fa-2x fas fa-comment-alt"></button>
-                            <!-- COMMENT SECTION -->
-                            <div>
-                                <label>
-                                    <b>Anonymous: </b>This game is amazing!</label>
+            <!--================================== COMMENT SECTION =================================-->
+                    <br>
+                    <div class="container">
+                        <form class="form-commenting" action="/addComment" method="post" enctype="multipart/form-data">
+                            <table style="width:115%">
+                                <td width="70%">
+                                    <input type="text" id="comment" name="comment" class="form-control" placeholder="Comment Something! ">
+                                </td>
+                                <td width="30%">
+                                    <button type="submit" class="btn btn-default">Send</button>
+                                </td>
+                            </table>
+                            <input type="hidden" id="postID" name="uniquepostID" <%= data.list[i].image %>>
+                        </form>
+                        <h4>Comment Section</h4>
+                        <div class="media p-1">
+                            <div class="media-body">
+                                
+                                <h5>John Doe <small><i>Posted on February 19, 2016</i></small></h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <span><a class="" role="button" data-toggle="collapse" href="#replyCommentT" aria-expanded="false" aria-controls="collapseExample">reply</a></span>
+                                <div class="collapse" id="replyCommentT">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="comment">Your Comment</label>
+                                            <textarea name="comment" class="form-control" rows="3"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Send</button>
+                                    </form>
+                                </div>
+                                <div class="media p-3">
+                                    <div class="media-body">
+                                        <h5>Jane Doe <small><i>Posted on February 20 2016</i></small></h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        <span><a class="" role="button" data-toggle="collapse" href="#replyCommentT" aria-expanded="false" aria-controls="collapseExample">reply</a></span>
+                                        <div class="collapse" id="replyCommentT">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="comment">Your Comment</label>
+                                                    <textarea name="comment" class="form-control" rows="3"></textarea>
+                                                </div>
+                                                <button type="submit" class="btn btn-default">Send</button>
+                                            </form> 
+                                        </div>
+                                    </div>
+                                </div>  
                             </div>
-                            <div>
-                                <input type="text" class="commentBox" placeholder="Add a comment...">
-                            </div>
-                            <!-- END OF COMMENT SECTION -->
+                        </div>
+                    </div>   
+            <!--- ============================  END OF COMMENT SECTION========================= ---->
                         </div>
                         
                     </div>

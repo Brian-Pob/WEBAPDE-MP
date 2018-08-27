@@ -5,9 +5,7 @@ const fs = require('fs');
 
 function userModule(server) {
 
-
     server.post('/signup', function (req, resp) {
-        
         
         var form = new formidable.IncomingForm()
         console.log('went into signup')

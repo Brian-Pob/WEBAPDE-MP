@@ -6,12 +6,12 @@ const commentSchema = new mongoose.Schema({
     user: {type: String},
     comment: {type: String},
     datePosted: {type: String},
-    comments: {type: [String]}
+    parentComment: {type: String}
 })
 
-const commentModel = mongoose.model('posts', commentSchema)
+const commentModel = mongoose.model('comments', commentSchema)
 
-function addComment(userV, commentV){
+function addComment(userV, commentV, pcommentV, callback){
     var dt = dateTime.create()
     var dtFormat = dt.format('m/d/Y')
     
@@ -19,7 +19,7 @@ function addComment(userV, commentV){
         user: userV,
         comment: commentV,
         datePosted: dtFormat,
-        comments: []
+        parentComment: pcommentV
     })
     
     commentInstance.save(function (err, inv) {
@@ -37,4 +37,4 @@ function viewComments(callback){
     })
 }
 
-module.exports.viewComment = viewComment
+module.exports.viewComments = viewComments

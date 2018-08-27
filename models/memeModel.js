@@ -147,7 +147,12 @@ function viewMemesbySearchTag(user, tag, callback) {
 
 module.exports.viewMemesbySearchTag = viewMemesbySearchTag;
 
-
+function addCommentID(commentID, callback){
+    var toInsert = commentID
+    memeModel.update({ "_id": ObjectID("5b82aa2df573220b18e5a4a9")},  // TESTING
+    {$push: {comments: "hello"}} // ADD COMMENT ID
+)
+}
 
 function viewAllProfileMemes() {
 
