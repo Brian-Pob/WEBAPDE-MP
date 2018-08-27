@@ -107,13 +107,42 @@ function getUserList(callback){
 
 module.exports.getUserList = getUserList
 
+function editProfileDesc(idUser, editFile, callback){
+    const searchQuery = {user : idUser}
+
+    userModel.findOneAndUpdate(user.profileDesc, editFile, function(err, user){
+        if (err) return console.error(err);
+        callback(user)
+    })
+    
+
+}
+
+module.exports.editProfileDesc = editProfileDesc
+
+function editProfilePic(idUser, editFile, callback){
+    const searchQuery = {user : idUser}
+
+    userModel.findOneAndUpdate(user.profilePic, editFile, function(err, user){
+        if (err) return console.error(err);
+        callback(user)
+    })
+    
+
+}
+
+module.exports.editProfilePic = editProfilePic
+
+
+
+
 function checkIfExists(user, callback){
     const searchQuery = {
         user: user
-module.exports.checkIfExists = checkIfExists
+    }
+    userModel.findOne(searchQuery, function(err, userResult){
+        if (err) return console.error(err);
         callback(userResult)
     })
 }
-        if (err) return console.error(err);
-    userModel.findOne(searchQuery, function(err, userResult){
-    }
+module.exports.checkIfExists = checkIfExists
