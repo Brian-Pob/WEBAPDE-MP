@@ -113,21 +113,21 @@ function viewMemesbySearchTag(user, tag, callback){
 
 module.exports.viewMemesbySearchTag = viewMemesbySearchTag;
     
-}
 
-function viewAllProfileMemes(){
-    
-}
 
-//SEARCHING BY NAME AND TAG
-function viewMemesbySearchName(){
+// function viewAllProfileMemes(){
     
-}
+// }
 
-function editMeme(){
+// //SEARCHING BY NAME AND TAG
+// function viewMemesbySearchName(){
     
-}
+// }
 
-function deleteMeme(){
+// function editMeme(){
     
-}
+// }
+
+// function deleteMeme(){
+    
+// }
