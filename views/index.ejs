@@ -30,40 +30,6 @@
     <%- include uploader %>
     <%} %>
     
-    <div class="container img-post">
-        <div class="row">
-            <div class="col-lg-6 mx-auto">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>
-                            <strong>I love this game!</strong>
-                        </h3>
-                        <span class="badge badge-primary">Gaming</span>
-                        <p>
-                            <small>1,234 points · 56 comments</small>
-                        </p>
-
-                    </div>
-                    <div class="card-body">
-                        <div class="pb-2 mt-4 mb-2 ">
-                            <a data-toggle="modal" data-target="#wfModal">
-                                <img class="rounded picture" src="imgs/wf.jpg">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-outline-success fa-2x fas fa-arrow-up"></button>
-                        <button class="btn btn-outline-danger fa-2x fas fa-arrow-down"></button>
-                        <button class="btn btn-outline-primary  fa-2x fab fa-facebook-f"></button>
-                        <button class="btn btn-outline-info fa-2x fab fa-twitter "></button>
-                        <button class="btn btn-outline-secondary  fa-2x fas fa-comment-alt"></button>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
     <div class= "allposts">
         <% for(var i = 0; i < data.list.length; i++) { %>
         <div class="container img-post">
@@ -71,16 +37,13 @@
             <div class="col-lg-6 mx-auto">
                 <div class="card">
                     <div class="card-header">
-                        <h3>
-                            <strong><%= data.list[i].title %></strong>
-                        </h3>
+                        <h2 align =center><strong><%= data.list[i].title %></strong></h2>
+                        <p align =center>
                         <% for(var j = 0; j < data.list[i].tags.length; j++) {%>
-                        <span class="badge badge-primary"><%= data.list[i].tags[j] %></span>
-                        <% } %>
-                        <p>
-                            <small><%= data.list[i].datePosted %></small>
+                        <span class="badge badge-primary"><%= data.list[i].tags[j] %></span><% } %></p>
+                        <p style="text-align:left; margin: 0;padding: 0;"><strong><a href="">by <%= data.list[i].user %> </a></strong>
+                            <span style="float:right;"><small style="color:grey;">posted <%= data.list[i].datePosted %></small></span>
                         </p>
-
                     </div>
                     <div class="card-body">
                         <div class="pb-2 mt-4 mb-2 ">
