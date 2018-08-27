@@ -54,12 +54,9 @@
     <div class= "allposts">
         <div class="container img-post">
         <div class="row">
-            
             <!-- DENISE, THIS IS THE THING THAT YOU MADE FOR SEARCHING TAGS -->
             <%- include tagsearch.ejs %>
             <div class="col-lg-6 steadysizepostcontainer">
-                
-                
                 <%  if(typeof data.user === 'undefined'){%>
                 <%} else {%>
                 <%- include uploader %>
@@ -71,19 +68,7 @@
                 <%- include meme.ejs %>
                 <!-- END OF MEME -->
                 <% } %>
-                 
-            </div>
-        </div>
-        </div>
-
-    </div>
-    
-   
-
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 mx-auto">
+                
                 <div class="card">
                     <div class="card-body">
                         <a href="#">See more...</a>

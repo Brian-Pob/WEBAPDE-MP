@@ -92,6 +92,28 @@ function viewAvailableMemes (user, callback){
 
 module.exports.viewAvailableMemes = viewAvailableMemes
 
+function viewMemesbySearchTag(user, tag, callback){
+    const publicMemesQuery = {
+        isPrivate: false
+    }
+    const myMemesQuery = {
+        user: user
+    }
+    const sharedMemesQuery = {
+        sharedUser: user
+    }
+    const tagMemesQuery = {
+        tags: tag
+    }
+    memeModel.find({$and: [tagMemesQuery,{$or: [publicMemesQuery, myMemesQuery, sharedMemesQuery]}]}, function(err, list){
+        if(err) return consoler.error(err);
+        callback(list)
+    })
+}
+
+module.exports.viewMemesbySearchTag = viewMemesbySearchTag;
+    
+}
 
 function viewAllProfileMemes(){
     
@@ -102,25 +124,10 @@ function viewMemesbySearchName(){
     
 }
 
-function viewMemesbySearchTag(){
-    
-}
-
-
-
 function editMeme(){
     
 }
 
 function deleteMeme(){
-    
-}
-
-//Should add auto complete
-function searchMemeByName(){
-    
-}
-
-function searchMemeByTag(){
     
 }
