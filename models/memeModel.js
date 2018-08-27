@@ -113,7 +113,7 @@ function viewMemesbySearchTag(user, tag, callback){
 
 module.exports.viewMemesbySearchTag = viewMemesbySearchTag;
     
-}
+
 
 function viewAllProfileMemes(){
     
