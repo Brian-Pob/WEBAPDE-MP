@@ -106,3 +106,33 @@ function getUserList(callback){
 }
 
 module.exports.getUserList = getUserList
+
+function editProfileDesc(idUser, editFile, callback){
+    const searchQuery = {user : idUser}
+
+    userModel.findOneAndUpdate(user.profileDesc, editFile, function(err, user){
+        if (err) return console.error(err);
+        callback(user)
+    })
+    
+
+}
+
+module.exports.editProfileDesc = editProfileDesc
+
+function editProfilePic(idUser, editFile, callback){
+    const searchQuery = {user : idUser}
+
+    userModel.findOneAndUpdate(user.profilePic, editFile, function(err, user){
+        if (err) return console.error(err);
+        callback(user)
+    })
+    
+
+}
+
+module.exports.editProfilePic = editProfilePic
+
+
+
+

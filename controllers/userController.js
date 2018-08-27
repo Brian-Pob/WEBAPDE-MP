@@ -26,6 +26,25 @@ function userModule(server) {
         })
     })
 
+    server.post('/edit', function(req,resp){
+        
+        var profPic = req.body.inputProfileImage
+        var profDesc = req.body.inputDescription 
+        var user = req.session.user
+
+        if(profPic != null){
+            userModel.editProfilePic(user, profPic, function(userData){
+                resp.redirect('/visitprofile')
+            })
+        }
+        if(profDesc != null){
+            userModel.editProfileDesc(user, profDesc, function(userData){
+                resp.redirect('/visitprofile')
+            })
+        }
+
+    })
+
     
 }
 module.exports.Activate = userModule;

@@ -4,14 +4,23 @@
     <title>MEMESUPREME.COM</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/toggleswitch.min.css">
+    <link rel="stylesheet" href="css/autocomplete.min.css">
     <link rel="stylesheet" href="framework/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="imgs/favicon.png">
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
-    <link rel="icon" href="imgs/favicon.png">
+    <script src="js/bootstrap-filestyle.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js%22%3E"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js%22%3E"></script>
 </head>
 
 <body>
@@ -57,17 +66,23 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form class="form-edit" action="/signup" method="POST">
+                    <form class="form-edit" action="/edit" method="POST">
 
                         <h1 class="h3 mb-3 font-weight-normal">Edit your profile here!
                         </h1>
-                        <label for="inputUsernameSignup" class="sr-only">Username</label>
-                        <input type="username" id="inputDescription" name="inputDescription" class="form-control" placeholder="<%= userData.profileDesc%>" required>
+                    <!-- Changing Profile Pic start -->
+                    <label>Change your profile picture:</label>
+                <input class="form-control-file input-lg" type="file" placeholder="Upload Profile Picture" id="inputProfileImage" aria-label="Upload">
+                    <!-- Changing Profile Pic start -->
+
+                    <!-- Changing Description start -->
+                    <label>Change your description:</label>
+                        <label for="inputDescription" class="sr-only">Description</label>
+                        <input type="description" id="inputDescription" name="inputDescription" class="form-control" placeholder="<%= userData.profileDesc%>">
                         <br>
-                        
-                        
                         <label></label>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Finish!</button>
+                    <!-- Changing Description end -->
                         <p class="mt-5 mb-3 text-muted">&copy; 2018</p>
                     </form>
                 </div>
