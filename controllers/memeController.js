@@ -77,7 +77,17 @@ function memeModule(server) {
                 resp.render('./index', {data: data})
             })
         })
-
+    
+        server.get('/viewProfileMemes', function (req, resp) {
+            memeModel.viewAllProfileMemes(function (list) {
+                const data = {
+                    list: list
+                };
+                resp.redirect('/visitprofile', {
+                    data: data
+                })
+            })
+        })
         server.get('/uploadMeme', function (req, resp) {
 
         })

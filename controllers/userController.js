@@ -36,15 +36,24 @@ function userModule(server) {
             })
         })
     })
+    // server.post('/edit', function(req,resp){
+        
+    //     var profPic = req.body.inputProfileImage
+    //     var profDesc = req.body.inputDescription 
+    //     var user = req.session.user
 
-    server.get('/visitprofile', function (req, resp) {
-        
-        var user = req.session.user
-        
-        userModel.searchForProfile(user, function (userData) {
-            resp.render('./profilepage.ejs', {userData : userData})
-        })
-    })
+    //     if(profPic != null){
+    //         userModel.editProfilePic(user, profPic, function(userData){
+    //             resp.redirect('/')
+    //         })
+    //     }
+    //     if(profDesc != null){
+    //         userModel.editProfileDesc(user, profDesc, function(userData){
+    //             resp.redirect('/')
+    //         })
+    //     }
+
+    // })
 
     
     

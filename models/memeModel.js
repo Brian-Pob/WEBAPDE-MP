@@ -147,16 +147,28 @@ function viewMemesbySearchTag(user, tags, callback) {
 
 module.exports.viewMemesbySearchTag = viewMemesbySearchTag;
 
-function addCommentID(commentID, callback){
-    var toInsert = commentID
-    memeModel.update({ "_id": ObjectID("5b82aa2df573220b18e5a4a9")},  // TESTING
-    {$push: {comments: "hello"}} // ADD COMMENT ID
-)
+
+function viewAllProfileMemes(user, callback){
+    const myMemesQuery = {
+        user: user
+    }
+    const sharedMemesQuery = {
+        sharedUser: user
+    }
+    memeModel.find({$or: [myMemesQuery, sharedMemesQuery]}, function(err, list){
+        if(err) return consoler.error(err);
+        callback(list)
+    })
 }
 
-function viewAllProfileMemes() {
+module.exports.viewAllProfileMemes = viewAllProfileMemes;
 
+//SEARCHING BY NAME AND TAG
+function viewMemesbySearchName(){
+    
 }
+
+
 
 // //SEARCHING BY NAME AND TAG
 // function viewMemesbySearchName(){
