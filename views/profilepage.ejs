@@ -12,9 +12,7 @@
     <link rel="icon" href="imgs/favicon.png">
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/bootstrap-filestyle.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -27,6 +25,7 @@
 <body>
     <%- include loggedinnavbar %>   
     
+    <!-- USER PROFILE -->
     <div class="container profile">
         <div class="row">
             <div class="col-lg-7 mx-auto">
@@ -48,11 +47,11 @@
         </div>
     </div>
 
-    <!-- This is the profile's posts -->
+    <!-- PROFILE POSTS -->
     <div class= "allposts">
         <div class="container img-post">
             <div class="row">
-                <div class="col-lg-6 steadysizepostcontainer">
+                <div class="col-lg-6 steadysizepostcontainer post-centered" >
                 <% for(var i = 0; i < data.list.length; i++) { %>
                 <!-- START OF MEME -->
                 <%- include meme.ejs %>

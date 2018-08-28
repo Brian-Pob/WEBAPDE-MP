@@ -79,13 +79,15 @@ function loadModule(server){
 
     server.get('/visitprofile', function (req, resp) {
         
-        var user = req.session.user
-        
+        var user = req.query.profile
+        var session_user = req.session.user
         userModel.searchForProfile(user, function (userData) {
-            memeModel.viewAllProfileMemes(user, function (list) {
-                const data = {list: list}
-                resp.render('./profilepage.ejs', {userData : userData, data : data})
-            })
+            if(userData !== undefined){
+                memeModel.viewAllProfileMemes(user, function (list) {
+                    const data = {list: list, user: session_user}
+                    resp.render('./profilepage.ejs', {userData : userData, data : data})
+                })
+            }
         })
     })
     server.get('/logout', function (req, resp) {
@@ -103,5 +105,4 @@ function loadModule(server){
             resp.redirect('./about.ejs')
     })
 }
-
 module.exports.Activate = loadModule

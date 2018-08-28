@@ -36,7 +36,7 @@
 
             <!-- <a id="upload-btn" class="btn btn-dark" data-toggle="modal" data-target="#uploadModal" >Upload a Meme</a> -->
             <button id="upload-btn" class="btn btn-primary btn-space" data-toggle="modal" data-target="#uploadModal">Upload a Meme</button>
-            <a id="profile-btn" class="btn btn-outline-light" href="/visitprofile">Profile</a>
+            <a id="profile-btn" class="btn btn-outline-light" href="/visitprofile?profile=<%= data.user %>"><%= data.user %></a>
             <a id="logout" class="btn btn-dark" href="/logout">Logout</a>
             <!-- TODO: Add modal for logout -->
         </div>
