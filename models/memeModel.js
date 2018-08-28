@@ -3,42 +3,70 @@ const dateTime = require('node-datetime')
 
 //MEME
 const memeSchema = new mongoose.Schema({
-    user: {type: String},// name of the person
-    title: {type: String},
-    image: {type: String},//url of the image
-    comments: {type: [String]},//array of comment IDs
-    tags: {type: [String]},
-    datePosted: {type: String},//date the post was created
-    isPrivate: {type: Boolean},
-    sharedUser: {type: String}
+    user: {
+        type: String
+    }, // name of the person
+    title: {
+        type: String
+    },
+    image: {
+        type: String
+    }, //url of the image
+    comments: {
+        type: [String]
+    }, //array of comment IDs
+    tags: [{
+        type: [String]
+    }],
+    datePosted: {
+        type: String
+    }, //date the post was created
+    isPrivate: {
+        type: Boolean
+    },
+    sharedUser: {
+        type: String
+    }
 })
 
 const memeModel = mongoose.model('posts', memeSchema)
 
-function uploadMeme(memeTitle, memeImageLink, memePoster, memeTags, memeVisibility, sharedUser, callback){
+function uploadMeme(memeTitle, memeImageLink, memePoster, memeTags, memeVisibility, sharedUser, callback) {
     // console.log('upload meme entered')
     var dt = dateTime.create()
     var dtFormat = dt.format('m/d/Y')
-    if(sharedUser !== null){
-        console.log('Shared User')
+    var trimmedTags = []
+
+    for (var i = 0; i < memeTags.length; i++) {
+        var tagString = memeTags[i]
+        // console.log(typeof tagString)
+        // console.log(tagString.trim())
+        trimmedTags.push(tagString.trim())
+        // console.log(trimmedTags)
+    }
+    // console.log('-----------------------')
+    if (sharedUser !== null) {
+        // console.log('Shared User')
+        // console.log(trimmedTags)
         const memeInstance = memeModel({
             user: memePoster,
             title: memeTitle,
             image: memeImageLink,
             comments: [],
-            tags: memeTags,
+            tags: trimmedTags,
             datePosted: dtFormat,
             isPrivate: memeVisibility,
             sharedUser: sharedUser
         })
         memeInstance.save(function (err, inv) {
             // console.log('meme saved')
-            if (err)  return console.error(err)
-    
+            if (err) return console.error(err)
+
             callback()
         })
-    }else{
+    } else {
         // console.log('No Shared User')
+        console.log(trimmedTags)
         const memeInstance = memeModel({
             user: memePoster,
             title: memeTitle,
@@ -50,31 +78,31 @@ function uploadMeme(memeTitle, memeImageLink, memePoster, memeTags, memeVisibili
         })
         memeInstance.save(function (err, inv) {
             // console.log('meme saved')
-            if (err)  return console.error(err)
-    
+            if (err) return console.error(err)
+
             callback()
         })
     }
     // console.log('meme instance created')
 
-    
+
 }
 
 module.exports.uploadMeme = uploadMeme
 
-function viewAllPublicMemes(callback){
+function viewAllPublicMemes(callback) {
     const searchQuery = {
         isPrivate: false
     }
-    memeModel.find(searchQuery, function(err,list){
-        if(err) return console.error(err);
+    memeModel.find(searchQuery, function (err, list) {
+        if (err) return console.error(err);
         callback(list)
     })
 }
 
 module.exports.viewAllPublicMemes = viewAllPublicMemes
 
-function viewAvailableMemes (user, callback){
+function viewAvailableMemes(user, callback) {
     const publicMemesQuery = {
         isPrivate: false
     }
@@ -84,15 +112,17 @@ function viewAvailableMemes (user, callback){
     const sharedMemesQuery = {
         sharedUser: user
     }
-    memeModel.find({$or: [publicMemesQuery, myMemesQuery, sharedMemesQuery]}, function(err, list){
-        if(err) return consoler.error(err);
+    memeModel.find({
+        $or: [publicMemesQuery, myMemesQuery, sharedMemesQuery]
+    }, function (err, list) {
+        if (err) return consoler.error(err);
         callback(list)
     })
 }
 
 module.exports.viewAvailableMemes = viewAvailableMemes
 
-function viewMemesbySearchTag(user, tag, callback){
+function viewMemesbySearchTag(user, tags, callback) {
     const publicMemesQuery = {
         isPrivate: false
     }
@@ -103,16 +133,19 @@ function viewMemesbySearchTag(user, tag, callback){
         sharedUser: user
     }
     const tagMemesQuery = {
-        tags: tag
+        tags: tags
     }
-    memeModel.find({$and: [tagMemesQuery,{$or: [publicMemesQuery, myMemesQuery, sharedMemesQuery]}]}, function(err, list){
-        if(err) return consoler.error(err);
+    memeModel.find({
+        $and: [tagMemesQuery, {
+            $or: [publicMemesQuery, myMemesQuery, sharedMemesQuery]
+        }]
+    }, function (err, list) {
+        if (err) return consoler.error(err);
         callback(list)
     })
 }
 
 module.exports.viewMemesbySearchTag = viewMemesbySearchTag;
-    
 
 
 function viewAllProfileMemes(user, callback){
@@ -135,10 +168,17 @@ function viewMemesbySearchName(){
     
 }
 
-function editMeme(){
-    
 }
 
-function deleteMeme(){
-    
-}
+// //SEARCHING BY NAME AND TAG
+// function viewMemesbySearchName(){
+
+// }
+
+// function editMeme(){
+
+// }
+
+// function deleteMeme(){
+
+// }

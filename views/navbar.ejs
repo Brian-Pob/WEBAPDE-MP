@@ -1,7 +1,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" href="/">
             <img style="margin-right: 10px; padding: 0;" src = "http://www.stickpng.com/assets/thumbs/580b585b2edbce24c47b2a2c.png"> <strong>MemeSupreme</strong>
         </a>
 
@@ -91,7 +91,7 @@
 
                         <!-- Modal body -->
                         <div class="modal-body">
-                            <form class="form-signin" action="/signup" method="POST">
+                            <form class="form-signin" action="/signup" method="POST" enctype="multipart/form-data">
 
                                 <h1 class="h3 mb-3 font-weight-normal">Sign Up for a &copy;MemeSupreme account and experience a new dimension of
                                     <i>litness</i>
@@ -99,12 +99,17 @@
                                 <label for="inputUsernameSignup" class="sr-only">Username</label>
                                 <input type="username" id="inputUsernameSignup" name="inputUsernameSignup" class="form-control" placeholder="Username" required>
                                 <br>
+
                                 <label for="inputPasswordSignup" class="sr-only">Password</label>
                                 <input type="password" id="inputPasswordSignup" name="inputPasswordSignup" class="form-control" placeholder="Password" required>
+                                <br>
+
                                 <label for="inputDescSignup" class="sr-only">Description</label>
-                                <input type="description" id="inputDescriptionSignup" name="inputDescriptionSignup" class="form-control" placeholder="Hello, I like memes!" required>
+                                <input type="description" id="inputDescriptionSignup" name="inputDescriptionSignup" class="form-control" placeholder="Profile Description" required>
+                                <br>
+
                                 <label>Profile Picture</label>
-                                <input class="form-control-file input-lg" type="file" placeholder="Upload Profile Picture" id="inputProfileImage" aria-label="Upload">
+                                <input class="form-control-file input-lg" type="file" placeholder="Upload Profile Picture" id="inputProfileImage" name="inputProfileImage" aria-label="Upload">
                         
                                 <div class="checkbox mb-3">
                                     <label>

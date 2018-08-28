@@ -11,7 +11,6 @@ server.use(bodyParser.urlencoded({
     extended: true
 }))
 server.use(bodyParser.json())
-
 // const crypto = require('crypto')
 
 const session = require('express-session')
@@ -37,7 +36,7 @@ server.use(express.static(__dirname + '/public'));
 server.set('view engine', 'ejs')
 
 
-const controllers = ['user', 'meme', 'load']
+const controllers = ['user', 'meme', 'load', 'comment']
 for(var i = 0; i < controllers.length; i++){
     const mdl = require('./controllers/'+controllers[i]+'Controller')
     mdl.Activate(server)
