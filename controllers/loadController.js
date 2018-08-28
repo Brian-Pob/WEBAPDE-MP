@@ -77,6 +77,17 @@ function loadModule(server){
         
     })
 
+    server.get('/visitprofile', function (req, resp) {
+        
+        var user = req.session.user
+        
+        userModel.searchForProfile(user, function (userData) {
+            memeModel.viewAllProfileMemes(user, function (list) {
+                const data = {list: list}
+                resp.render('./profilepage.ejs', {userData : userData, data : data})
+            })
+        })
+    })
     server.get('/logout', function (req, resp) {
 
         req.session.destroy()

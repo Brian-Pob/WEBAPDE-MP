@@ -60,7 +60,14 @@ function memeModule(server) {
         })
     
         server.get('/viewProfileMemes', function (req, resp) {
-            
+            memeModel.viewAllProfileMemes(function (list) {
+                const data = {
+                    list: list
+                };
+                resp.redirect('/visitprofile', {
+                    data: data
+                })
+            })
         })
 
 

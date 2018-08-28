@@ -16,6 +16,7 @@ function userModule(server) {
 
             fs.rename(oldpath, newpath, function (err) {
                     // console.log('file transfer start')
+                    if (err) throw err;
                     userModel.checkIfExists(username, function(userResult){
                         if(userResult == undefined){
                             userModel.createUser(username, password, description, files.inputProfileImage.name, function(){
@@ -25,8 +26,8 @@ function userModule(server) {
                         }else{
                             resp.redirect('/?signup=exists')
                         }
-                    if (err) throw err;}); 
                     })
+                }); 
             })
 
 
@@ -38,16 +39,6 @@ function userModule(server) {
 
         
     })
-
-    server.get('/visitprofile', function (req, resp) {
-        
-        var user = req.session.user
-        
-        userModel.searchForProfile(user, function (userData) {
-            resp.render('./profilepage.ejs', {userData : userData})
-        })
-    })
-
     // server.post('/edit', function(req,resp){
         
     //     var profPic = req.body.inputProfileImage

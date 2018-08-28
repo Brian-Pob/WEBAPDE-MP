@@ -115,9 +115,20 @@ module.exports.viewMemesbySearchTag = viewMemesbySearchTag;
     
 
 
-function viewAllProfileMemes(){
-    
+function viewAllProfileMemes(user, callback){
+    const myMemesQuery = {
+        user: user
+    }
+    const sharedMemesQuery = {
+        sharedUser: user
+    }
+    memeModel.find({$or: [myMemesQuery, sharedMemesQuery]}, function(err, list){
+        if(err) return consoler.error(err);
+        callback(list)
+    })
 }
+
+module.exports.viewAllProfileMemes = viewAllProfileMemes;
 
 //SEARCHING BY NAME AND TAG
 function viewMemesbySearchName(){
