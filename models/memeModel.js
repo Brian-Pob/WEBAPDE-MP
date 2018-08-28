@@ -168,7 +168,7 @@ function viewMemesbySearchName(){
     
 }
 
-}
+
 
 // //SEARCHING BY NAME AND TAG
 // function viewMemesbySearchName(){

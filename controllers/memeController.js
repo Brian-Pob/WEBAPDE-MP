@@ -87,7 +87,7 @@ function memeModule(server) {
                     data: data
                 })
             })
-
+        })
         server.get('/uploadMeme', function (req, resp) {
 
         })
